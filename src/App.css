@@ -1,38 +1,129 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap");
+/* A Modern CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
+/* end Modern CSS Reset */
+body {
+  font-family: "Manrope";
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  background-color: #101010;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.hero {
+  padding: 12.375rem 2rem 7rem;
+  background-color: #101010;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-image: url(./assets/home/mobile/image-header.jpg);
+  background-size: cover;
+  background-position: bottom 0px left 0;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  line-height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  letter-spacing: 1.3px;
+}
+
+.hero small {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  opacity: 50%;
+}
+
+.hero p {
+  opacity: 75%;
+  font-size: 0.9375rem;
+  margin-top: 1.5rem;
+  max-width: 30ch;
+  text-align: center;
+}
+
+.hero button {
+  margin-top: 1.75rem;
+  background-color: #d87d4a;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+  border: 0;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  letter-spacing: 1px;
+}/*# sourceMappingURL=App.css.map */

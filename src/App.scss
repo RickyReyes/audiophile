@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap");
+
+$Orange: #d87d4a;
+$Light-Orange: #fbaf85;
+$Almost-Black: #101010;
+$Light-Gray: #f1f1f1;
+$Very-Light-Gray: #fafafa;
+
+/* A Modern CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* end Modern CSS Reset */
+
+body {
+  font-family: "Manrope";
+}
+
+header {
+  background-color: $Almost-Black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid #3d3d3d;
+}
+
+.hero {
+  padding: 12.375rem 2rem 7rem;
+  background-color: $Almost-Black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(./assets/home/mobile/image-header.jpg);
+  background-size: cover;
+  background-position: bottom 0px left 0;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  line-height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  letter-spacing: 1.3px;
+}
+
+.hero small {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  opacity: 50%;
+}
+
+.hero p {
+  opacity: 75%;
+  font-size: 0.9375rem;
+  margin-top: 1.5rem;
+  max-width: 30ch;
+  text-align: center;
+}
+
+.hero button {
+  margin-top: 1.75rem;
+  background-color: $Orange;
+  color: white;
+  border: 0;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  letter-spacing: 1px;
+}
