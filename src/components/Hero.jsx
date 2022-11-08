@@ -2,7 +2,10 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section
+      className="hero"
+      style={{ backgroundImage: `url("/assets/home/mobile/image-header.jpg")` }}
+    >
       <small>New product</small>
       <h2>XX99 Mark II Headphones</h2>
       <p>

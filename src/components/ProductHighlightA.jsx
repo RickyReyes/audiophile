@@ -1,11 +1,10 @@
 import React from "react";
-import speakersCategory from "../assets/home/tablet/image-speaker-zx9.png";
 
 const ProductHighlightA = () => {
   return (
     <aside className="product-highlight-a">
       <div className="img-container">
-        <img src={speakersCategory} alt="" />
+        <img src="/assets/home/tablet/image-speaker-zx9.png" alt="" />
       </div>
       <h2>
         ZX9

@@ -1,9 +1,12 @@
 import React from "react";
-import aboutImg from "../assets/shared/mobile/image-best-gear.jpg";
+
 const About = () => {
   return (
     <article className="about">
-      <img src={aboutImg} alt="" />
+      <img
+        src="/assets/shared/mobile/image-best-gear.jpg"
+        alt="person wearing headphones"
+      />
       <div>
         <h4>
           Bringing you the <span>best</span> audio gear

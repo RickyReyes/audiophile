@@ -1,12 +1,9 @@
 import React from "react";
-import audiophileLogo from "../assets/shared/desktop/logo.svg";
-import facebookLogo from "../assets/shared/desktop/icon-facebook.svg";
-import twitterLogo from "../assets/shared/desktop/icon-twitter.svg";
-import instagramLogo from "../assets/shared/desktop/icon-instagram.svg";
+
 const Footer = () => {
   return (
     <footer>
-      <img src={audiophileLogo} alt="" />
+      <img src="/assets/shared/desktop/logo.svg" alt="audiophile logo" />
       <ul className="footer-nav" aria-roledescription="navigation">
         <li>Home</li>
         <li>Headphones</li>
@@ -23,13 +20,22 @@ const Footer = () => {
       <small>Copyright 2021. All Rights Reserved</small>
       <ul className="footer-logos">
         <li>
-          <img src={facebookLogo} alt="facebook logo" />
+          <img
+            src="/assets/shared/desktop/icon-facebook.svg"
+            alt="facebook logo"
+          />
         </li>
         <li>
-          <img src={twitterLogo} alt="twitter logo" />
+          <img
+            src="/assets/shared/desktop/icon-twitter.svg"
+            alt="twitter logo"
+          />
         </li>
         <li>
-          <img src={instagramLogo} alt="instagram logo" />
+          <img
+            src="/assets/shared/desktop/icon-instagram.svg"
+            alt="instagram logo"
+          />
         </li>
       </ul>
     </footer>
