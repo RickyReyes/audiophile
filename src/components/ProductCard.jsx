@@ -1,7 +1,6 @@
 import React from "react";
 
 const ProductCard = ({ product }) => {
-  console.log(product.new);
   return (
     <li className="product-card">
       <img
