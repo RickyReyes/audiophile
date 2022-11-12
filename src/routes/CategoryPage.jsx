@@ -1,14 +1,16 @@
 import React from "react";
 import ProductCard from "../components/ProductCard";
+import CategorySection from "../components/CategorySection";
+import About from "../components/About";
 
 const CategoryPage = ({ productData, category }) => {
+  // Sorted by putting products whose "new" property is true first
   let products = productData
     .filter((product) => product.category === category)
     .sort((x, y) => {
       return x.new === y.new ? 0 : x ? 1 : -1;
     });
 
-  // Sorted by putting products whose "new" property is true first
   return (
     <>
       <h1 className="category-page__heading">{category}</h1>

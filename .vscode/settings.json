@@ -1,0 +1,5 @@
+{
+  "debug.internalConsoleOptions": "openOnSessionStart",
+  "debug.showInStatusBar": "onFirstSessionStart",
+  "debug.showInlineBreakpointCandidates": false
+}

@@ -1,26 +1,24 @@
 import React from "react";
 
 import Hero from "../components/Hero";
-import HomeCategorySection from "../components/HomeCategorySection";
+import CategorySection from "../components/CategorySection";
 import ProductHighlightA from "../components/ProductHighlightA";
 import ProductHighlightB from "../components/ProductHighlightB";
 import ProductHighlightC from "../components/ProductHighlightC";
-import About from "../components/About";
 import Footer from "../components/Footer";
 
-const Home = () => {
+const Home = ({ productData }) => {
+  const heroProduct = productData.find(
+    (product) => product.name === "XX99 Mark II Headphones"
+  );
   return (
-    <>
-      <main>
-        <Hero />
-        <HomeCategorySection />
-        <ProductHighlightA />
-        <ProductHighlightB />
-        <ProductHighlightC />
-        <About />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <Hero heroProduct={heroProduct} />
+      <CategorySection />
+      <ProductHighlightA />
+      <ProductHighlightB />
+      <ProductHighlightC />
+    </main>
   );
 };
 

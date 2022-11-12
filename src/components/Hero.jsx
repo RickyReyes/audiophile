@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Hero = () => {
+const Hero = ({ heroProduct }) => {
   return (
     <section
       className="hero"
@@ -12,7 +13,9 @@ const Hero = () => {
         Experience natural, lifelike audio and exceptional build quality made
         for the passionate music enthusiast.
       </p>
-      <button>See Product</button>
+      <button>
+        <Link to={`/product/${heroProduct.slug}`}>See Product</Link>
+      </button>
       {/* Headphones Shop Speakers Shop Earphones Shop ZX9 speaker Upgrade to
       premium speakers that are phenomenally built to deliver truly remarkable
       sound. See product ZX7 speaker See product YX1 earphones See product

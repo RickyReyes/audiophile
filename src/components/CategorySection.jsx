@@ -1,4 +1,4 @@
-import HomeCategoryCard from "../components/HomeCategoryCard";
+import HomeCategoryCard from "./CategoryCard";
 
 const HomeCategorySection = () => {
   return (
