@@ -1,18 +1,18 @@
-import HomeCategoryCard from "./CategoryCard";
+import CategoryCard from "./CategoryCard";
 
-const HomeCategorySection = () => {
+const CategorySection = () => {
   return (
-    <section className="home-category-section">
-      <ul className="home-category-cards">
-        <HomeCategoryCard
+    <section className="category-section">
+      <ul className="category-cards">
+        <CategoryCard
           src="/assets/home/mobile/image-speaker-zx9.png"
           name="headphones"
         />
-        <HomeCategoryCard
+        <CategoryCard
           src="/assets/home/mobile/image-speaker-zx9.png"
           name="speakers"
         />
-        <HomeCategoryCard
+        <CategoryCard
           src="/assets/home/mobile/image-speaker-zx9.png"
           name="earphones"
         />
@@ -21,4 +21,4 @@ const HomeCategorySection = () => {
   );
 };
 
-export default HomeCategorySection;
+export default CategorySection;

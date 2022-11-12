@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const ProductDetailSection = ({ product }) => {
   const navigate = useNavigate();
-  console.log(product);
+  console.log(product.features);
   return (
     <section className="product-detail">
       <p className="go-back" onClick={() => navigate(-1)}>
@@ -14,20 +14,20 @@ const ProductDetailSection = ({ product }) => {
         src={product.image.mobile.substring(1)}
         alt={product.name}
       />
-      {product.new && <small>New Product</small>}
+      {product.new && <small className="new-product">New Product</small>}
       <h3>{product.name}</h3>
       <p>{product.description}</p>
       <strong>$ {product.price.toLocaleString("en-US")}</strong>
       <div className="amt-and-btn-flex">
         <div className="amt-flex">
-          <span>-</span>
+          <span className="quantity-operator">-</span>
           <span>1</span>
-          <span>+</span>
+          <span className="quantity-operator">+</span>
         </div>
         <button>Add to Cart</button>
       </div>
       <h4>Features</h4>
-      <p>{product.features}</p>
+      <p>{product.features.replace("\n", "\n")}</p>
       <h4>In the box</h4>
       <ul className="in-the-box">
         {product.includes.map(({ quantity, item }) => (
@@ -37,7 +37,7 @@ const ProductDetailSection = ({ product }) => {
           </li>
         ))}
       </ul>
-      <ul className="">
+      <ul className="product-detail__images">
         <li>
           <img
             src={product.gallery.first.mobile.substring(1)}

@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const HomeCategoryCard = ({ src, name }) => {
+const CategoryCard = ({ src, name }) => {
   return (
-    <li className="home-category-card">
+    <li className="category-card">
       <Link to={`/${name}`}>
-        <img className="home-category-photo" src={src} alt="product category" />
-        <p className="home-category-name">{name}</p>
+        <img className="category-photo" src={src} alt="product category" />
+        <p className="category-name">{name}</p>
         <div className="shop-arrow-flex">
-          <small className="home-category__shop">Shop</small>
+          <small className="category-shop">Shop</small>
           <img
             src="/assets/shared/desktop/icon-arrow-right.svg"
             alt="arrow right"
@@ -19,4 +19,4 @@ const HomeCategoryCard = ({ src, name }) => {
   );
 };
 
-export default HomeCategoryCard;
+export default CategoryCard;
