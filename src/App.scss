@@ -32,14 +32,6 @@ a {
   color: unset;
 }
 
-small {
-  color: $Orange;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 10px;
-  padding-top: 2rem;
-}
-
 h2 {
   font-size: 2.25rem;
   line-height: 40px;
@@ -50,12 +42,30 @@ h2 {
   font-weight: 600;
 }
 
-h3 {
+h3,
+h4 {
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 2px;
   font-size: 1.75rem;
   line-height: 38.25px;
+}
+h4 {
+  font-size: 1.5rem;
+  padding-top: 5.5rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.new-product {
+  color: $Orange;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  padding-top: 2rem;
 }
 
 *,
@@ -195,10 +205,9 @@ header {
     border-radius: 50%;
   }
   img {
-    display: block;
-    width: 100%;
     margin: 0 auto;
   }
+
   h2 {
     padding-top: 2rem;
   }
@@ -242,9 +251,6 @@ header {
   & > * {
     border-radius: 8px;
   }
-  img {
-    width: 100%;
-  }
   & > div {
     background-color: $Light-Gray;
     padding: 41px 1.5rem;
@@ -269,7 +275,6 @@ header {
   flex-direction: column;
   gap: 2.5rem;
   img {
-    width: 100%;
     border-radius: 8px;
   }
   h4 {
@@ -312,7 +317,6 @@ footer {
   }
 
   img {
-    display: block;
     margin: 0 auto;
   }
   p {
@@ -366,9 +370,6 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  img {
-    width: 100%;
-  }
 
   h2 {
     padding-top: 1.5rem;
@@ -402,7 +403,7 @@ h1 {
     padding: 2rem 0 1.5rem;
   }
 
-  &__desc {
+  p {
     padding-top: 1.5rem;
     line-height: 25px;
     opacity: 0.5;
@@ -417,8 +418,6 @@ h1 {
 }
 
 .product-detail-img {
-  display: block;
-  max-width: 100%;
   border-radius: 8px;
   padding-top: 1.5rem;
 }
@@ -442,4 +441,26 @@ h1 {
   padding: 1rem;
   gap: 1.25rem;
   width: 120px;
+}
+
+.in-the-box {
+  list-style-type: none;
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  li {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+    span {
+      color: $Orange;
+      width: 20px;
+      font-weight: 700;
+    }
+    p {
+      flex: 1;
+      padding-top: 0;
+    }
+  }
 }
