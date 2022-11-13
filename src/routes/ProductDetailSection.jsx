@@ -1,9 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import AmountAndButton from "../components/AmountAndButton";
+import CategorySection from "../components/CategorySection";
 
 const ProductDetailSection = ({ product }) => {
   const navigate = useNavigate();
-  console.log(product.features);
+  console.log(product);
   return (
     <section className="product-detail">
       <p className="go-back" onClick={() => navigate(-1)}>
@@ -18,14 +20,7 @@ const ProductDetailSection = ({ product }) => {
       <h3>{product.name}</h3>
       <p>{product.description}</p>
       <strong>$ {product.price.toLocaleString("en-US")}</strong>
-      <div className="amt-and-btn-flex">
-        <div className="amt-flex">
-          <span className="quantity-operator">-</span>
-          <span>1</span>
-          <span className="quantity-operator">+</span>
-        </div>
-        <button>Add to Cart</button>
-      </div>
+      <AmountAndButton />
       <h4>Features</h4>
       <p>{product.features.replace("\n", "\n")}</p>
       <h4>In the box</h4>
@@ -57,6 +52,17 @@ const ProductDetailSection = ({ product }) => {
           />
         </li>
       </ul>
+      <h4>You may also like</h4>
+      <ul className="product-detail__others">
+        {product.others.map((otherObj) => (
+          <li>
+            <img src={otherObj.image.mobile.substring(1)} alt={otherObj.name} />
+            <h4>{otherObj.name}</h4>
+            <button>See Product</button>
+          </li>
+        ))}
+      </ul>
+      <CategorySection />
     </section>
   );
 };

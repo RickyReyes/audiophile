@@ -6,7 +6,7 @@ const CategoryCard = ({ src, name }) => {
     <li className="category-card">
       <Link to={`/${name}`}>
         <img className="category-photo" src={src} alt="product category" />
-        <p className="category-name">{name}</p>
+        <h5 className="category-name">{name}</h5>
         <div className="shop-arrow-flex">
           <small className="category-shop">Shop</small>
           <img
