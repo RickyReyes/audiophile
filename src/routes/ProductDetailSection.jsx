@@ -1,11 +1,15 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import AmountAndButton from "../components/AmountAndButton";
 import CategorySection from "../components/CategorySection";
 
 const ProductDetailSection = ({ product }) => {
   const navigate = useNavigate();
-  console.log(product);
+  const pathname = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <section className="product-detail">
       <p className="go-back" onClick={() => navigate(-1)}>
@@ -58,7 +62,10 @@ const ProductDetailSection = ({ product }) => {
           <li>
             <img src={otherObj.image.mobile.substring(1)} alt={otherObj.name} />
             <h4>{otherObj.name}</h4>
-            <button>See Product</button>
+
+            <Link to={`/product/${otherObj.slug}`}>
+              <button>See Product</button>
+            </Link>
           </li>
         ))}
       </ul>

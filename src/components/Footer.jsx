@@ -1,14 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer>
       <img src="/assets/shared/desktop/logo.svg" alt="audiophile logo" />
       <ul className="footer-nav" aria-roledescription="navigation">
-        <li>Home</li>
-        <li>Headphones</li>
-        <li>Speakers</li>
-        <li>Earphones</li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/headphones">Headphones</Link>
+        </li>
+        <li>
+          <Link to="/speakers">Speakers</Link>
+        </li>
+        <li>
+          <Link to="/earphones">Earphones</Link>
+        </li>
       </ul>
       <p>
         Audiophile is an all in one stop to fulfill your audio needs. We're a

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   return (
@@ -11,7 +12,9 @@ const ProductCard = ({ product }) => {
       {product.new && <small className="new-product">New Product</small>}
       <h2>{product.name}</h2>
       <p>{product.description}</p>
-      <button>See Product</button>
+      <Link to={`/product/${product.slug}`}>
+        <button>See Product</button>
+      </Link>
     </li>
   );
 };

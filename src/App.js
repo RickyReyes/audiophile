@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Header from "./components/Header";
-import CategorySection from "./components/CategorySection";
 import About from "./components/About";
 import Footer from "./components/Footer";
 
