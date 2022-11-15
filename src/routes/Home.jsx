@@ -5,7 +5,6 @@ import CategorySection from "../components/CategorySection";
 import ProductHighlightA from "../components/ProductHighlightA";
 import ProductHighlightB from "../components/ProductHighlightB";
 import ProductHighlightC from "../components/ProductHighlightC";
-import Footer from "../components/Footer";
 
 const Home = ({ productData }) => {
   const heroProduct = productData.find(
@@ -27,10 +26,12 @@ const Home = ({ productData }) => {
   return (
     <main>
       <Hero heroProduct={heroProduct} />
-      <CategorySection />
-      <ProductHighlightA product={productA} />
-      <ProductHighlightB product={productB} />
-      <ProductHighlightC product={productC} />
+      <CategorySection mobileMenu={false} />
+      <section className="product-highlights">
+        <ProductHighlightA product={productA} />
+        <ProductHighlightB product={productB} />
+        <ProductHighlightC product={productC} />
+      </section>
     </main>
   );
 };

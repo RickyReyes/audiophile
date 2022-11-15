@@ -4,7 +4,14 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer>
-      <img src="/assets/shared/desktop/logo.svg" alt="audiophile logo" />
+      <div className="orange-line"></div>
+      <Link to="/">
+        <img
+          className="footer-logo"
+          src="/assets/shared/desktop/logo.svg"
+          alt="audiophile logo"
+        />
+      </Link>
       <ul className="footer-nav" aria-roledescription="navigation">
         <li>
           <Link to="/">Home</Link>
@@ -25,28 +32,29 @@ const Footer = () => {
         helping you get the most out of personal audio. Come and visit our demo
         facility - we’re open 7 days a week.
       </p>
-      <p></p>
-      <small>Copyright 2021. All Rights Reserved</small>
-      <ul className="footer-logos">
-        <li>
-          <img
-            src="/assets/shared/desktop/icon-facebook.svg"
-            alt="facebook logo"
-          />
-        </li>
-        <li>
-          <img
-            src="/assets/shared/desktop/icon-twitter.svg"
-            alt="twitter logo"
-          />
-        </li>
-        <li>
-          <img
-            src="/assets/shared/desktop/icon-instagram.svg"
-            alt="instagram logo"
-          />
-        </li>
-      </ul>
+      <div className="copyright-logos-flex">
+        <small>Copyright 2021. All Rights Reserved</small>
+        <ul className="footer-logos">
+          <li>
+            <img
+              src="/assets/shared/desktop/icon-facebook.svg"
+              alt="facebook logo"
+            />
+          </li>
+          <li>
+            <img
+              src="/assets/shared/desktop/icon-twitter.svg"
+              alt="twitter logo"
+            />
+          </li>
+          <li>
+            <img
+              src="/assets/shared/desktop/icon-instagram.svg"
+              alt="instagram logo"
+            />
+          </li>
+        </ul>
+      </div>
     </footer>
   );
 };

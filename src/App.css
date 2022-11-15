@@ -11,7 +11,7 @@ a {
   color: unset;
 }
 
-h2 {
+h1 {
   font-size: 2.25rem;
   line-height: 40px;
   text-align: center;
@@ -19,6 +19,15 @@ h2 {
   padding-top: 1rem;
   letter-spacing: 1.3px;
   font-weight: 600;
+}
+
+.category-page__heading {
+  text-align: center;
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
+  padding: 1.75rem;
+  letter-spacing: 2px;
 }
 
 h3,
@@ -64,13 +73,23 @@ body {
   font-family: "Manrope";
 }
 
+main {
+  position: relative;
+}
+
 header {
   background-color: #101010;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 1.5rem;
+  padding: 0 1.5rem;
   border-bottom: 1px solid #3d3d3d;
+  height: 90px;
+}
+
+.hamburger,
+.cart-icon {
+  cursor: pointer;
 }
 
 .hero {
@@ -81,19 +100,18 @@ header {
   flex-direction: column;
   align-items: center;
   background-size: cover;
-  background-position: bottom 0px left 0;
+  background-position: bottom 0px left 0px;
+  background-image: url("/public/assets/home/mobile/image-header.jpg");
 }
-
 .hero small {
   text-transform: uppercase;
   letter-spacing: 10px;
   opacity: 50%;
 }
-
 .hero p {
   opacity: 75%;
   letter-spacing: 0.8px;
-  margin-top: 1.5rem;
+  padding-top: 1.5rem;
   text-align: center;
 }
 
@@ -113,7 +131,8 @@ header {
 }
 
 .category-section {
-  padding: 5.75rem 0 0;
+  padding: 5.75rem 1.5rem 0;
+  background-color: white;
 }
 
 .category-section,
@@ -174,31 +193,31 @@ header {
   letter-spacing: 1px;
 }
 
+.product-highlights {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7.5rem;
+  gap: 1.5rem;
+}
+
 .product-highlight-a {
   background-color: #d87d4a;
   color: white;
   padding: 55px 1.5rem;
-  margin: 7.5rem 1.5rem 0;
+  margin: 0 1.5rem;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.product-highlight-a .img-container {
-  padding: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  position: relative;
+.product-highlight-a__name {
+  background-color: transparent;
 }
-.product-highlight-a .img-container::before {
-  content: "";
-  position: absolute;
-  top: -7.5%;
-  left: -7.5%;
-  width: 115%;
-  height: 115%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-}
-.product-highlight-a img {
-  margin: 0 auto;
+.product-highlight-a__img {
+  background-image: url(/public/assets/home/mobile/image-speaker-zx9.png);
+  width: 197.21px;
+  height: 237px;
+  background-size: cover;
 }
 .product-highlight-a h2 {
   padding-top: 2rem;
@@ -209,6 +228,7 @@ header {
   letter-spacing: 0.2px;
   text-align: center;
   padding-top: 1.5rem;
+  max-width: 23rem;
 }
 .product-highlight-a button {
   display: block;
@@ -228,12 +248,13 @@ header {
 
 .product-highlight-b {
   padding: 100px 1.5rem;
-  margin: 1.5rem;
+  margin: 0 1.5rem;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
+  background-image: url(/public/assets/home/mobile/image-speaker-zx7.jpg);
   background-size: cover;
 }
 .product-highlight-b button {
@@ -258,10 +279,15 @@ header {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin: 1.5rem;
+  margin: 0 1.5rem;
 }
 .product-highlight-c > * {
   border-radius: 8px;
+}
+.product-highlight-c__img {
+  background-size: cover;
+  background-image: url(/public/assets/home/mobile/image-earphones-yx1.jpg);
+  height: 200px;
 }
 .product-highlight-c > div {
   background-color: #f1f1f1;
@@ -320,6 +346,22 @@ header {
 footer {
   background-color: black;
   padding: 3.25rem 1.5rem 2.375rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer .orange-line {
+  width: 100px;
+  height: 4px;
+  background-color: #d87d4a;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+footer .footer-logo {
+  cursor: pointer;
 }
 footer .footer-nav {
   padding: 3rem 0;
@@ -335,16 +377,19 @@ footer li {
   font-weight: 600;
   color: white;
 }
-footer img {
-  margin: 0 auto;
-}
 footer p {
   color: rgb(104, 102, 102);
   text-align: center;
   line-height: 25px;
 }
+footer .copyright-logos-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
+  gap: 3rem;
+}
 footer small {
-  padding: 3rem 0;
   font-weight: 700;
   color: rgb(104, 102, 102);
   font-size: 15px;
@@ -354,7 +399,6 @@ footer small {
 footer .footer-logos {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1rem;
 }
 footer .footer-logos > * {
@@ -364,15 +408,6 @@ footer .footer-logos > * {
 /* Category Page */
 .category-page {
   margin: 1.5rem;
-}
-
-h1 {
-  text-align: center;
-  text-transform: uppercase;
-  background-color: black;
-  color: white;
-  padding: 1.75rem;
-  letter-spacing: 2px;
 }
 
 .product-cards {
@@ -541,4 +576,173 @@ h1 {
   letter-spacing: 1px;
   cursor: pointer;
   font-weight: 600;
+}
+
+.cart {
+  z-index: 1;
+  position: fixed;
+  left: 50%;
+  top: calc(90px + 1.5rem);
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 2rem 1.75rem;
+  border-radius: 8px;
+  width: calc(100% - 3rem);
+}
+.cart h1 {
+  background-color: white;
+  color: black;
+  font-size: 1.125rem;
+  padding: 0;
+}
+.cart .cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart .remove-all {
+  border: 0;
+  opacity: 0.5;
+  background-color: white;
+  text-decoration: underline;
+  text-decoration-thickness: 0.01em;
+  font-size: 0.9375rem;
+}
+.cart .cart-rows {
+  padding-top: 2rem;
+}
+.cart .cart-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.cart .name-and-price {
+  margin-right: auto;
+}
+.cart .price {
+  opacity: 0.5;
+}
+.cart img {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+}
+.cart .total-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart .total-word {
+  font-size: 0.9375rem;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+.cart .total-number {
+  font-size: 1.125rem;
+}
+.cart button {
+  display: block;
+  margin: 0 auto;
+  background-color: #d87d4a;
+  color: white;
+  border: 0;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 750px) {
+  .hero {
+    background-image: url("/public/assets/home/tablet/image-header.jpg");
+    padding: 7.875rem 11.625rem 10.5rem;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+    line-height: 3.6125rem;
+    padding-top: 1.5rem;
+  }
+  .hero p {
+    padding-top: 1.5rem;
+    line-height: 25px;
+    max-width: 400px;
+  }
+  .hero button {
+    margin-top: 2.5rem;
+  }
+  .category-section {
+    padding: 9.25rem 2.5rem 0;
+  }
+  .category-cards {
+    gap: 0.6125rem;
+    flex-direction: row;
+  }
+  .product-highlights {
+    gap: 2rem;
+  }
+  .product-highlight-a,
+.product-highlight-b {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+  .product-highlight-a h2 {
+    font-size: 3.5rem;
+    line-height: 3.6125rem;
+  }
+  .product-highlight-a__img {
+    background-image: url(/public/assets/home/tablet/image-speaker-zx9.png);
+  }
+  .product-highlight-b {
+    background-image: url(/public/assets/home/tablet/image-speaker-zx7.jpg);
+    padding: 100px 3.875rem;
+  }
+  .product-highlight-c {
+    flex-direction: row;
+    gap: 11px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 2.5rem;
+  }
+  .product-highlight-c__img {
+    background-image: url(/public/assets/home/tablet/image-earphones-yx1.jpg);
+    background-position: center center;
+  }
+  .product-highlight-c > * {
+    height: 100%;
+  }
+  .product-highlight-c > div {
+    padding: 100px 40px;
+  }
+  .about {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+  footer {
+    padding: 3.75rem 2.5rem 2.875rem;
+    align-items: flex-start;
+  }
+  footer .orange-line {
+    transform: unset;
+    left: 2.5rem;
+  }
+  footer .footer-nav {
+    padding: 2rem 0;
+    flex-direction: row;
+    gap: 2.125rem;
+  }
+  footer .copyright-logos-flex {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  footer p {
+    text-align: left;
+  }
+  footer small {
+    padding: 0;
+  }
 }/*# sourceMappingURL=App.css.map */

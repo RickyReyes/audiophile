@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 const ProductHighlightA = ({ product }) => {
   return (
     <div className="product-highlight-a">
-      <div className="img-container">
-        <img src={"/assets/home/tablet/image-speaker-zx9.png"} alt="" />
-      </div>
-      <h2>{product.name}</h2>
+      <div className="product-highlight-a__img"></div>
+      <h2 className="product-highlight-a__name">
+        ZX9
+        <br />
+        Speaker
+      </h2>
       <p>
         Upgrade to premium speakers that are phenomenally built to deliver truly
         remarkable sound.

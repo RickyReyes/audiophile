@@ -3,12 +3,9 @@ import { Link } from "react-router-dom";
 
 const Hero = ({ heroProduct }) => {
   return (
-    <section
-      className="hero"
-      style={{ backgroundImage: `url("/assets/home/mobile/image-header.jpg")` }}
-    >
+    <section className="hero">
       <small>New product</small>
-      <h2>XX99 Mark II Headphones</h2>
+      <h1>XX99 Mark II Headphones</h1>
       <p>
         Experience natural, lifelike audio and exceptional build quality made
         for the passionate music enthusiast.

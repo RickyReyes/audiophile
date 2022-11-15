@@ -26,7 +26,7 @@ const ProductDetailSection = ({ product }) => {
       <strong>$ {product.price.toLocaleString("en-US")}</strong>
       <AmountAndButton />
       <h4>Features</h4>
-      <p>{product.features.replace("\n", "\n")}</p>
+      <p>{product.features}</p>
       <h4>In the box</h4>
       <ul className="in-the-box">
         {product.includes.map(({ quantity, item }) => (
@@ -59,7 +59,7 @@ const ProductDetailSection = ({ product }) => {
       <h4>You may also like</h4>
       <ul className="product-detail__others">
         {product.others.map((otherObj) => (
-          <li>
+          <li key={otherObj.id}>
             <img src={otherObj.image.mobile.substring(1)} alt={otherObj.name} />
             <h4>{otherObj.name}</h4>
 
