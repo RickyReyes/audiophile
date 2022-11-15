@@ -11,7 +11,11 @@ const Header = ({ setShowMobileMenu, setShowCart }) => {
         alt="hamburger icon"
       />
       <Link to="/">
-        <img src="/assets/shared/desktop/logo.svg" alt="audiophile logo" />
+        <img
+          className="header-logo"
+          src="/assets/shared/desktop/logo.svg"
+          alt="audiophile logo"
+        />
       </Link>
       <img
         className="cart-icon"

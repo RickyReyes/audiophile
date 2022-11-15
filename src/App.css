@@ -11,11 +11,19 @@ a {
   color: unset;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+}
+
 h1 {
   font-size: 2.25rem;
   line-height: 40px;
   text-align: center;
-  text-transform: uppercase;
   padding-top: 1rem;
   letter-spacing: 1.3px;
   font-weight: 600;
@@ -23,7 +31,6 @@ h1 {
 
 .category-page__heading {
   text-align: center;
-  text-transform: uppercase;
   background-color: black;
   color: white;
   padding: 1.75rem;
@@ -32,7 +39,6 @@ h1 {
 
 h3,
 h4 {
-  text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 2px;
   font-size: 1.75rem;
@@ -41,7 +47,6 @@ h4 {
 
 h4 {
   font-size: 1.5rem;
-  padding-top: 5.5rem;
 }
 
 img {
@@ -56,8 +61,8 @@ ul {
 .new-product {
   color: #d87d4a;
   font-size: 0.875rem;
-  text-transform: uppercase;
   letter-spacing: 10px;
+  text-transform: uppercase;
   padding-top: 2rem;
 }
 
@@ -171,7 +176,6 @@ header {
 }
 
 .category-name {
-  text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 1.07143px;
   font-size: 0.9375rem;
@@ -211,16 +215,16 @@ header {
   align-items: center;
 }
 .product-highlight-a__name {
-  background-color: transparent;
+  padding-top: 2rem;
+  line-height: 40px;
+  font-size: 2.25rem;
+  text-align: center;
 }
 .product-highlight-a__img {
   background-image: url(/public/assets/home/mobile/image-speaker-zx9.png);
   width: 197.21px;
   height: 237px;
   background-size: cover;
-}
-.product-highlight-a h2 {
-  padding-top: 2rem;
 }
 .product-highlight-a p {
   opacity: 0.75;
@@ -322,13 +326,16 @@ header {
   flex-direction: column;
   gap: 2.5rem;
 }
-.about img {
+.about__img {
+  width: 100%;
+  height: 327px;
   border-radius: 8px;
+  background-image: url(/public/assets/shared/mobile/image-best-gear.jpg);
+  background-size: cover;
 }
 .about h4 {
   font-weight: 700;
   font-size: 1.75rem;
-  text-transform: uppercase;
   margin: 0 auto;
   text-align: center;
   letter-spacing: 1px;
@@ -477,6 +484,7 @@ footer .footer-logos > * {
 }
 .product-detail h4 {
   text-align: center;
+  padding-top: 5.5rem;
 }
 
 .product-detail-img {
@@ -657,6 +665,12 @@ footer .footer-logos > * {
 }
 
 @media (min-width: 750px) {
+  header {
+    gap: 2.625rem;
+  }
+  header .cart-icon {
+    margin-left: auto;
+  }
   .hero {
     background-image: url("/public/assets/home/tablet/image-header.jpg");
     padding: 7.875rem 11.625rem 10.5rem;
@@ -689,7 +703,7 @@ footer .footer-logos > * {
     margin-left: 2.5rem;
     margin-right: 2.5rem;
   }
-  .product-highlight-a h2 {
+  .product-highlight-a__name {
     font-size: 3.5rem;
     line-height: 3.6125rem;
   }
@@ -720,6 +734,22 @@ footer .footer-logos > * {
   .about {
     margin-left: 2.5rem;
     margin-right: 2.5rem;
+    gap: 4rem;
+  }
+  .about__img {
+    background-image: url(/public/assets/shared/tablet/image-best-gear.jpg);
+    background-position: center;
+  }
+  .about h4 {
+    padding-top: 0;
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+  .about p {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
   }
   footer {
     padding: 3.75rem 2.5rem 2.875rem;
@@ -744,5 +774,9 @@ footer .footer-logos > * {
   }
   footer small {
     padding: 0;
+  }
+  .category-page__heading {
+    font-size: 2.5rem;
+    padding: 105px 0 97px;
   }
 }/*# sourceMappingURL=App.css.map */
