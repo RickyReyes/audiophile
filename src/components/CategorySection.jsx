@@ -1,4 +1,4 @@
-import CategoryCard from "./CategoryCard";
+import CategoryCard from "./CategorySectionCard";
 
 const CategorySection = ({ mobileMenu }) => {
   return (
@@ -17,17 +17,17 @@ const CategorySection = ({ mobileMenu }) => {
           : {}
       }
     >
-      <ul className="category-cards">
+      <ul className="category-section__cards">
         <CategoryCard
-          src="/assets/home/mobile/image-speaker-zx9.png"
+          src="/assets/shared/desktop/image-category-thumbnail-headphones.png"
           name="headphones"
         />
         <CategoryCard
-          src="/assets/home/mobile/image-speaker-zx9.png"
+          src="/assets/shared/desktop/image-category-thumbnail-speakers.png"
           name="speakers"
         />
         <CategoryCard
-          src="/assets/home/mobile/image-speaker-zx9.png"
+          src="/assets/shared/desktop/image-category-thumbnail-earphones.png"
           name="earphones"
         />
       </ul>

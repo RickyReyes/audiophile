@@ -10,12 +10,12 @@ const ProductHighlightA = ({ product }) => {
         <br />
         Speaker
       </h2>
-      <p>
+      <p className="product-highlight-a__desc">
         Upgrade to premium speakers that are phenomenally built to deliver truly
         remarkable sound.
       </p>
       <Link to={`/product/${product.slug}`}>
-        <button>See product</button>
+        <button className="btn btn--black">See product</button>
       </Link>
     </div>
   );

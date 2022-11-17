@@ -1,5 +1,5 @@
 import React from "react";
-import ProductCard from "../components/ProductCard";
+import CategoryPageCard from "../components/CategoryPageCard";
 import CategorySection from "../components/CategorySection";
 
 const CategoryPage = ({ productData, category }) => {
@@ -11,17 +11,15 @@ const CategoryPage = ({ productData, category }) => {
     });
 
   return (
-    <>
+    <main className="category-page">
       <h2 className="category-page__heading">{category}</h2>
-      <main className="category-page">
-        <ul className="product-cards">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </ul>
-        <CategorySection />
-      </main>
-    </>
+      <ul className="category-page__cards">
+        {products.map((product) => (
+          <CategoryPageCard key={product.id} product={product} />
+        ))}
+      </ul>
+      <CategorySection />
+    </main>
   );
 };
 

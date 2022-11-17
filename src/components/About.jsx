@@ -5,10 +5,11 @@ const About = () => {
     <article className="about">
       <div className="about__img" />
       <div>
-        <h4>
-          Bringing you the <span>best</span> audio gear
+        <h4 className="about__heading">
+          Bringing you the{" "}
+          <span className="about__heading--highlight">best</span> audio gear
         </h4>
-        <p>
+        <p className="about__p">
           Located at the heart of New York City, Audiophile is the premier store
           for high end headphones, earphones, speakers, and audio accessories.
           We have a large showroom and luxury demonstration rooms available for

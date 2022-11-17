@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const ProductHighlightB = ({ product }) => {
   return (
     <div className="product-highlight-b">
-      <h3>{product.name}</h3>
+      <h3 className="product-highlight-b__name">{product.name}</h3>
       <Link to={`/product/${product.slug}`}>
-        <button>See Product</button>
+        <button className="btn--black-border">See Product</button>
       </Link>
     </div>
   );
