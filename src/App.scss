@@ -8,7 +8,6 @@ $Very-Light-Gray: #fafafa;
 
 @mixin btn {
   display: block;
-  margin: 0 auto;
   border: 0;
   font-size: 0.8125rem;
   text-transform: uppercase;
@@ -36,7 +35,23 @@ $Very-Light-Gray: #fafafa;
   border: 1px solid black;
   color: black;
 }
-.btn--orange {
+
+@mixin new-product {
+  font-size: 0.875rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  padding-top: 2rem;
+  color: gray;
+  display: block;
+}
+
+.new-product {
+  @include new-product;
+}
+
+.new-product--orange {
+  @include new-product;
+  color: $Orange;
 }
 
 a {
@@ -55,21 +70,9 @@ h6 {
   text-transform: uppercase;
 }
 
-h1 {
-  font-size: 2.25rem;
-  line-height: 40px;
-  text-align: center;
-  padding-top: 1rem;
-  letter-spacing: 1.3px;
-  font-weight: 600;
-}
-
-.category-page__heading {
-  text-align: center;
-  background-color: black;
-  color: white;
-  padding: 1.75rem;
-  letter-spacing: 2px;
+img {
+  max-width: 100%;
+  display: block;
 }
 
 h3,
@@ -83,21 +86,8 @@ h4 {
   font-size: 1.5rem;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
 ul {
   list-style-type: none;
-}
-
-@mixin new-product {
-  color: $Orange;
-  font-size: 0.875rem;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  padding-top: 2rem;
 }
 
 *,
@@ -140,10 +130,6 @@ main {
   background-size: cover;
   background-position: bottom 0px left 0px;
   background-image: url("/public/assets/home/mobile/image-header.jpg");
-  &__new-product {
-    @include new-product;
-    color: gray;
-  }
   &__heading {
     font-size: 2.25rem;
     line-height: 40px;
@@ -275,13 +261,13 @@ main {
   flex-direction: column;
   gap: 1.5rem;
   margin: 0 1.5rem;
-  &__flex-img {
+  &__img {
     border-radius: 8px;
     background-size: cover;
     background-image: url(/public/assets/home/mobile/image-earphones-yx1.jpg);
     height: 200px;
   }
-  &__flex-main {
+  &__main {
     border-radius: 8px;
     background-color: $Light-Gray;
     padding: 41px 1.5rem;
@@ -393,6 +379,11 @@ main {
     padding-top: 1.5rem;
     font-size: 1.75rem;
     line-height: 38.25px;
+    padding: 1.5rem 1.75rem 1.75rem;
+    text-align: center;
+    background-color: black;
+    color: white;
+    letter-spacing: 2px;
   }
   &__cards {
     margin: 1.5rem;
@@ -402,12 +393,13 @@ main {
     padding-bottom: 5rem;
   }
 }
+
 .category-page-card {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  p {
+  &__desc {
     text-align: center;
     font-size: 0.9375rem;
     opacity: 0.5;
@@ -415,120 +407,118 @@ main {
     line-height: 25px;
     padding-top: 1.5rem;
   }
-  button {
-    @include btn;
+  .btn {
     margin-top: 1.5rem;
   }
 }
 
+/*** Product Detail Section/Route ***/
+
 .product-detail {
   padding: 1rem 1.5rem;
-  .go-back {
+  &__go-back {
     cursor: pointer;
     opacity: 0.5;
     display: inline;
   }
 
-  .new-product {
-    display: block;
-    padding: 2rem 0 1.5rem;
+  &__product-img {
+    border-radius: 8px;
+    padding-top: 1.5rem;
   }
 
-  p {
+  &__name {
+    padding-top: 1.5rem;
+  }
+
+  &__p {
     padding-top: 1.5rem;
     line-height: 25px;
     opacity: 0.5;
     font-size: 0.9375rem;
   }
 
-  strong {
+  &__price {
     font-size: 1.125rem;
     font-weight: 600;
     display: block;
     padding-top: 1.5rem;
   }
-  h4 {
-    text-align: center;
-    padding-top: 5.5rem;
+
+  &__amount-and-btn {
+    display: flex;
+    gap: 1rem;
+    justify-content: start;
+    padding-top: 2rem;
   }
-}
 
-.product-detail-img {
-  border-radius: 8px;
-  padding-top: 1.5rem;
-}
-
-.amt-and-btn-flex {
-  display: flex;
-  gap: 1rem;
-  justify-content: start;
-  padding-top: 2rem;
-  button {
-    @include btn;
-    margin: 0;
+  &__amount-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $Light-Gray;
+    padding: 1rem;
+    gap: 1.25rem;
+    width: 120px;
+    font-weight: 700;
   }
-}
 
-.amt-flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: $Light-Gray;
-  padding: 1rem;
-  gap: 1.25rem;
-  width: 120px;
-  font-weight: 700;
   .quantity-operator {
     opacity: 0.5;
     cursor: pointer;
   }
-}
 
-.in-the-box {
-  padding-top: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  li {
+  &__subheading {
+    text-align: center;
+    padding-top: 5.5rem;
+  }
+
+  &__includes {
+    padding-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__includes-item {
     display: flex;
     align-items: center;
     gap: 21px;
-    span {
+    &__amount {
       color: $Orange;
       width: 20px;
       font-weight: 700;
     }
-    p {
+    &__name {
       flex: 1;
-      padding-top: 0;
+      opacity: 0.5;
     }
   }
-}
-
-.product-detail__images {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-  margin-top: 5.5rem;
-  img {
-    border-radius: 8px;
+  &__images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 5.5rem;
+    img {
+      border-radius: 8px;
+    }
   }
-}
-
-.product-detail__others {
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
-  padding: 2.5rem 0 5rem;
-  h4 {
-    padding: 2rem 0;
+  &__others {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    padding: 2.5rem 0 5rem;
   }
-  img {
-    border-radius: 8px;
-  }
-  button {
-    @include btn;
+  &__other {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__name {
+      padding: 2rem 0;
+    }
+    &__img {
+      border-radius: 8px;
+    }
   }
 }
 
@@ -601,7 +591,7 @@ main {
 }
 
 @media (min-width: 750px) {
-  header {
+  .header {
     gap: 2.625rem;
     .cart-icon {
       margin-left: auto;
@@ -610,31 +600,30 @@ main {
   .hero {
     background-image: url("/public/assets/home/tablet/image-header.jpg");
     padding: 7.875rem 11.625rem 10.5rem;
-    h1 {
+    &__heading {
       font-size: 3.5rem;
       line-height: 3.6125rem;
       padding-top: 1.5rem;
     }
-    p {
+    &__p {
       padding-top: 1.5rem;
       line-height: 25px;
       max-width: 400px;
     }
-    button {
-      margin-top: 2.5rem;
-    }
   }
+
   .category-section {
     padding: 9.25rem 2.5rem 0;
-  }
-  .category-cards {
-    gap: 0.6125rem;
-    flex-direction: row;
+    &__cards {
+      gap: 0.6125rem;
+      flex-direction: row;
+    }
   }
 
   .product-highlights {
     gap: 2rem;
   }
+
   .product-highlight-a,
   .product-highlight-b {
     margin-left: 2.5rem;
@@ -665,14 +654,13 @@ main {
     &__img {
       background-image: url(/public/assets/home/tablet/image-earphones-yx1.jpg);
       background-position: center center;
-    }
-    & > * {
       height: 100%;
     }
-    & > div {
+    &__main {
       padding: 100px 40px;
     }
   }
+
   .about {
     margin-left: 2.5rem;
     margin-right: 2.5rem;
@@ -681,41 +669,38 @@ main {
       background-image: url(/public/assets/shared/tablet/image-best-gear.jpg);
       background-position: center;
     }
-    h4 {
+    &__heading {
       padding-top: 0;
       font-size: 2.5rem;
       line-height: 2.75rem;
       margin-left: 2.5rem;
       margin-right: 2.5rem;
     }
-    p {
+    &__p {
       margin-left: 2.5rem;
       margin-right: 2.5rem;
     }
   }
 
-  footer {
+  .footer {
     padding: 3.75rem 2.5rem 2.875rem;
     align-items: flex-start;
     .orange-line {
       transform: unset;
       left: 2.5rem;
     }
-    .footer-nav {
+    &__nav {
       padding: 2rem 0;
       flex-direction: row;
       gap: 2.125rem;
     }
-    .copyright-logos-flex {
+    &__copyright-logos {
       width: 100%;
       flex-direction: row;
       justify-content: space-between;
     }
-    p {
+    &__p {
       text-align: left;
-    }
-    small {
-      padding: 0;
     }
   }
 
@@ -723,6 +708,21 @@ main {
     &__heading {
       font-size: 2.5rem;
       padding: 105px 0 97px;
+    }
+  }
+  .category-page-card {
+    &__img {
+      width: 100%;
+    }
+    &__name {
+      font-size: 2.5rem;
+      line-height: 44px;
+      max-width: 300px;
+      text-align: center;
+      padding-top: 1rem;
+    }
+    &__desc {
+      max-width: 565px;
     }
   }
 }

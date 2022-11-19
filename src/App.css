@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;600;700&display=swap");
 .btn--orange {
   display: block;
-  margin: 0 auto;
   border: 0;
   font-size: 0.8125rem;
   text-transform: uppercase;
@@ -15,7 +14,6 @@
 
 .btn--black {
   display: block;
-  margin: 0 auto;
   border: 0;
   font-size: 0.8125rem;
   text-transform: uppercase;
@@ -29,7 +27,6 @@
 
 .btn--black-border {
   display: block;
-  margin: 0 auto;
   border: 0;
   font-size: 0.8125rem;
   text-transform: uppercase;
@@ -40,6 +37,25 @@
   background-color: transparent;
   border: 1px solid black;
   color: black;
+}
+
+.new-product {
+  font-size: 0.875rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  padding-top: 2rem;
+  color: gray;
+  display: block;
+}
+
+.new-product--orange {
+  font-size: 0.875rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  padding-top: 2rem;
+  color: gray;
+  display: block;
+  color: #d87d4a;
 }
 
 a {
@@ -58,21 +74,9 @@ h6 {
   text-transform: uppercase;
 }
 
-h1 {
-  font-size: 2.25rem;
-  line-height: 40px;
-  text-align: center;
-  padding-top: 1rem;
-  letter-spacing: 1.3px;
-  font-weight: 600;
-}
-
-.category-page__heading {
-  text-align: center;
-  background-color: black;
-  color: white;
-  padding: 1.75rem;
-  letter-spacing: 2px;
+img {
+  max-width: 100%;
+  display: block;
 }
 
 h3,
@@ -85,11 +89,6 @@ h4 {
 
 h4 {
   font-size: 1.5rem;
-}
-
-img {
-  max-width: 100%;
-  display: block;
 }
 
 ul {
@@ -135,14 +134,6 @@ main {
   background-size: cover;
   background-position: bottom 0px left 0px;
   background-image: url("/public/assets/home/mobile/image-header.jpg");
-}
-.hero__new-product {
-  color: #d87d4a;
-  font-size: 0.875rem;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  padding-top: 2rem;
-  color: gray;
 }
 .hero__heading {
   font-size: 2.25rem;
@@ -253,7 +244,6 @@ main {
 }
 .product-highlight-a .btn {
   display: block;
-  margin: 0 auto;
   border: 0;
   font-size: 0.8125rem;
   text-transform: uppercase;
@@ -283,13 +273,13 @@ main {
   gap: 1.5rem;
   margin: 0 1.5rem;
 }
-.product-highlight-c__flex-img {
+.product-highlight-c__img {
   border-radius: 8px;
   background-size: cover;
   background-image: url(/public/assets/home/mobile/image-earphones-yx1.jpg);
   height: 200px;
 }
-.product-highlight-c__flex-main {
+.product-highlight-c__main {
   border-radius: 8px;
   background-color: #f1f1f1;
   padding: 41px 1.5rem;
@@ -396,6 +386,11 @@ main {
   padding-top: 1.5rem;
   font-size: 1.75rem;
   line-height: 38.25px;
+  padding: 1.5rem 1.75rem 1.75rem;
+  text-align: center;
+  background-color: black;
+  color: white;
+  letter-spacing: 2px;
 }
 .category-page__cards {
   margin: 1.5rem;
@@ -411,7 +406,7 @@ main {
   flex-direction: column;
   align-items: center;
 }
-.category-page-card p {
+.category-page-card__desc {
   text-align: center;
   font-size: 0.9375rem;
   opacity: 0.5;
@@ -419,73 +414,45 @@ main {
   line-height: 25px;
   padding-top: 1.5rem;
 }
-.category-page-card button {
-  display: block;
-  margin: 0 auto;
-  border: 0;
-  font-size: 0.8125rem;
-  text-transform: uppercase;
-  padding: 15px 30px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  font-weight: 600;
+.category-page-card .btn {
   margin-top: 1.5rem;
 }
 
+/*** Product Detail Section/Route ***/
 .product-detail {
   padding: 1rem 1.5rem;
 }
-.product-detail .go-back {
+.product-detail__go-back {
   cursor: pointer;
   opacity: 0.5;
   display: inline;
 }
-.product-detail .new-product {
-  display: block;
-  padding: 2rem 0 1.5rem;
+.product-detail__product-img {
+  border-radius: 8px;
+  padding-top: 1.5rem;
 }
-.product-detail p {
+.product-detail__name {
+  padding-top: 1.5rem;
+}
+.product-detail__p {
   padding-top: 1.5rem;
   line-height: 25px;
   opacity: 0.5;
   font-size: 0.9375rem;
 }
-.product-detail strong {
+.product-detail__price {
   font-size: 1.125rem;
   font-weight: 600;
   display: block;
   padding-top: 1.5rem;
 }
-.product-detail h4 {
-  text-align: center;
-  padding-top: 5.5rem;
-}
-
-.product-detail-img {
-  border-radius: 8px;
-  padding-top: 1.5rem;
-}
-
-.amt-and-btn-flex {
+.product-detail__amount-and-btn {
   display: flex;
   gap: 1rem;
   justify-content: start;
   padding-top: 2rem;
 }
-.amt-and-btn-flex button {
-  display: block;
-  margin: 0 auto;
-  border: 0;
-  font-size: 0.8125rem;
-  text-transform: uppercase;
-  padding: 15px 30px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  font-weight: 600;
-  margin: 0;
-}
-
-.amt-flex {
+.product-detail__amount-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -495,32 +462,34 @@ main {
   width: 120px;
   font-weight: 700;
 }
-.amt-flex .quantity-operator {
+.product-detail .quantity-operator {
   opacity: 0.5;
   cursor: pointer;
 }
-
-.in-the-box {
+.product-detail__subheading {
+  text-align: center;
+  padding-top: 5.5rem;
+}
+.product-detail__includes {
   padding-top: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.in-the-box li {
+.product-detail__includes-item {
   display: flex;
   align-items: center;
   gap: 21px;
 }
-.in-the-box li span {
+.product-detail__includes-item__amount {
   color: #d87d4a;
   width: 20px;
   font-weight: 700;
 }
-.in-the-box li p {
+.product-detail__includes-item__name {
   flex: 1;
-  padding-top: 0;
+  opacity: 0.5;
 }
-
 .product-detail__images {
   display: flex;
   flex-direction: column;
@@ -531,29 +500,22 @@ main {
 .product-detail__images img {
   border-radius: 8px;
 }
-
 .product-detail__others {
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
   padding: 2.5rem 0 5rem;
 }
-.product-detail__others h4 {
+.product-detail__other {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-detail__other__name {
   padding: 2rem 0;
 }
-.product-detail__others img {
+.product-detail__other__img {
   border-radius: 8px;
-}
-.product-detail__others button {
-  display: block;
-  margin: 0 auto;
-  border: 0;
-  font-size: 0.8125rem;
-  text-transform: uppercase;
-  padding: 15px 30px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  font-weight: 600;
 }
 
 .cart {
@@ -620,7 +582,6 @@ main {
 }
 .cart button {
   display: block;
-  margin: 0 auto;
   border: 0;
   font-size: 0.8125rem;
   text-transform: uppercase;
@@ -633,33 +594,30 @@ main {
 }
 
 @media (min-width: 750px) {
-  header {
+  .header {
     gap: 2.625rem;
   }
-  header .cart-icon {
+  .header .cart-icon {
     margin-left: auto;
   }
   .hero {
     background-image: url("/public/assets/home/tablet/image-header.jpg");
     padding: 7.875rem 11.625rem 10.5rem;
   }
-  .hero h1 {
+  .hero__heading {
     font-size: 3.5rem;
     line-height: 3.6125rem;
     padding-top: 1.5rem;
   }
-  .hero p {
+  .hero__p {
     padding-top: 1.5rem;
     line-height: 25px;
     max-width: 400px;
   }
-  .hero button {
-    margin-top: 2.5rem;
-  }
   .category-section {
     padding: 9.25rem 2.5rem 0;
   }
-  .category-cards {
+  .category-section__cards {
     gap: 0.6125rem;
     flex-direction: row;
   }
@@ -692,11 +650,9 @@ main {
   .product-highlight-c__img {
     background-image: url(/public/assets/home/tablet/image-earphones-yx1.jpg);
     background-position: center center;
-  }
-  .product-highlight-c > * {
     height: 100%;
   }
-  .product-highlight-c > div {
+  .product-highlight-c__main {
     padding: 100px 40px;
   }
   .about {
@@ -708,43 +664,53 @@ main {
     background-image: url(/public/assets/shared/tablet/image-best-gear.jpg);
     background-position: center;
   }
-  .about h4 {
+  .about__heading {
     padding-top: 0;
     font-size: 2.5rem;
     line-height: 2.75rem;
     margin-left: 2.5rem;
     margin-right: 2.5rem;
   }
-  .about p {
+  .about__p {
     margin-left: 2.5rem;
     margin-right: 2.5rem;
   }
-  footer {
+  .footer {
     padding: 3.75rem 2.5rem 2.875rem;
     align-items: flex-start;
   }
-  footer .orange-line {
+  .footer .orange-line {
     transform: unset;
     left: 2.5rem;
   }
-  footer .footer-nav {
+  .footer__nav {
     padding: 2rem 0;
     flex-direction: row;
     gap: 2.125rem;
   }
-  footer .copyright-logos-flex {
+  .footer__copyright-logos {
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
   }
-  footer p {
+  .footer__p {
     text-align: left;
-  }
-  footer small {
-    padding: 0;
   }
   .category-page__heading {
     font-size: 2.5rem;
     padding: 105px 0 97px;
+  }
+  .category-page-card__img {
+    width: 100%;
+  }
+  .category-page-card__name {
+    font-size: 2.5rem;
+    line-height: 44px;
+    max-width: 300px;
+    text-align: center;
+    padding-top: 1rem;
+  }
+  .category-page-card__desc {
+    max-width: 565px;
   }
 }/*# sourceMappingURL=App.css.map */

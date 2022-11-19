@@ -26,9 +26,14 @@ function App() {
   const [productData] = useState(data);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const [cart, setCart] = useState([]);
+  /* 
+   const cart = [{
+    product: {}
+    amount: 3
+   }]
+  */
 
-  const [cart, setCart] = useState([productData[0]]);
-  console.log(cart);
   return (
     <div className="App">
       <Header setShowMobileMenu={setShowMobileMenu} setShowCart={setShowCart} />
@@ -49,7 +54,14 @@ function App() {
           <Route
             key={product.id}
             path={`/product/${product.slug}`}
-            element={<ProductDetailSection product={product} />}
+            element={
+              <ProductDetailSection
+                product={product}
+                productData={productData}
+                cart={cart}
+                setCart={setCart}
+              />
+            }
           />
         ))}
       </Routes>

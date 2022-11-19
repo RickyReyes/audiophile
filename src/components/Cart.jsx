@@ -1,12 +1,10 @@
 import React from "react";
-import Amount from "./Amount";
 
 const Cart = ({ cart }) => {
-  const cartQuantity = 3;
   return (
     <section className="cart">
       <div className="cart-header">
-        <h1>{`CART (${cartQuantity})`}</h1>
+        <h1>{`CART (${1})`}</h1>
         <p className="remove-all">Remove all</p>
       </div>
       <ul className="cart-rows">
@@ -17,7 +15,6 @@ const Cart = ({ cart }) => {
               <strong>{cartItem.name.split(" ")[0]}</strong>
               <p className="price">${cartItem.price.toLocaleString("en-US")}</p>
             </div>
-            <Amount />
           </li>
         ))}
       </ul>
