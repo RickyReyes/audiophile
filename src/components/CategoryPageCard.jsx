@@ -4,11 +4,15 @@ import { Link } from "react-router-dom";
 const CategoryPageCard = ({ product }) => {
   return (
     <li className="category-page-card">
-      <picture>
+      <picture className="category-page-card__picture">
         <source
           media="(min-width: 750px)"
-          srcset={product.image.tablet.substring(1)}
+          srcset={`/assets/product-${product.slug}/tablet/image-category-page-preview.jpg`}
         />
+        {/* <source
+          media="(min-width: 1200px)"
+          srcset={product.image.desktop.substring(1)}
+        /> */}
         <img
           className="category-page-card__img"
           src={product.image.mobile.substring(1)}

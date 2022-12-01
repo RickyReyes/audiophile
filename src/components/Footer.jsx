@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Nav from "../components/Nav";
 
 const Footer = () => {
   return (
@@ -12,20 +13,7 @@ const Footer = () => {
           alt="audiophile logo"
         />
       </Link>
-      <ul className="footer__nav" aria-roledescription="navigation">
-        <li className="footer__nav__item">
-          <Link to="/">Home</Link>
-        </li>
-        <li className="footer__nav__item">
-          <Link to="/headphones">Headphones</Link>
-        </li>
-        <li className="footer__nav__item">
-          <Link to="/speakers">Speakers</Link>
-        </li>
-        <li className="footer__nav__item">
-          <Link to="/earphones">Earphones</Link>
-        </li>
-      </ul>
+      <Nav />
       <p className="footer__p">
         Audiophile is an all in one stop to fulfill your audio needs. We're a
         small team of music lovers and sound specialists who are devoted to

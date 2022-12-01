@@ -26,11 +26,13 @@ const Home = ({ productData }) => {
   return (
     <main>
       <Hero heroProduct={heroProduct} />
-      <CategorySection mobileMenu={false} />
-      <section className="product-highlights">
-        <ProductHighlightA product={productA} />
-        <ProductHighlightB product={productB} />
-        <ProductHighlightC product={productC} />
+      <section className="home">
+        <CategorySection mobileMenu={false} />
+        <section className="product-highlights">
+          <ProductHighlightA product={productA} />
+          <ProductHighlightB product={productB} />
+          <ProductHighlightC product={productC} />
+        </section>
       </section>
     </main>
   );
