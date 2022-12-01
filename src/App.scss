@@ -3,6 +3,7 @@
 $Orange: #d87d4a;
 $Light-Orange: #fbaf85;
 $Almost-Black: #101010;
+$Almost-Black: #101010;
 $Light-Gray: #f1f1f1;
 $Very-Light-Gray: #fafafa;
 
@@ -40,7 +41,6 @@ $Very-Light-Gray: #fafafa;
   font-size: 0.875rem;
   letter-spacing: 10px;
   text-transform: uppercase;
-  padding-top: 2rem;
   color: gray;
   display: block;
 }
@@ -108,6 +108,10 @@ main {
 
 .header {
   background-color: $Almost-Black;
+}
+
+.header__container {
+  background-color: $Almost-Black;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -117,6 +121,9 @@ main {
   &__hamburger,
   &__cart-icon {
     cursor: pointer;
+  }
+  .nav {
+    display: none;
   }
 }
 
@@ -137,6 +144,7 @@ main {
     padding-top: 1rem;
     letter-spacing: 1.3px;
     font-weight: 600;
+    max-width: 12ch;
   }
   &__p {
     opacity: 75%;
@@ -149,8 +157,12 @@ main {
   }
 }
 
+.home {
+  margin: 0 1.5rem;
+}
+
 .category-section {
-  padding: 5.75rem 1.5rem 0;
+  padding-top: 5.75rem;
   background-color: white;
   &__cards {
     display: flex;
@@ -212,7 +224,6 @@ main {
   background-color: $Orange;
   color: white;
   padding: 55px 1.5rem;
-  margin: 0 1.5rem;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -246,7 +257,6 @@ main {
 
 .product-highlight-b {
   padding: 100px 1.5rem;
-  margin: 0 1.5rem;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -260,7 +270,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  margin: 0 1.5rem;
   &__img {
     border-radius: 8px;
     background-size: cover;
@@ -329,20 +338,7 @@ main {
   .logo {
     cursor: pointer;
   }
-  &__nav {
-    padding: 3rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    &__item {
-      text-transform: uppercase;
-      font-size: 13px;
-      letter-spacing: 2px;
-      font-weight: 600;
-      color: white;
-    }
-  }
+
   &__p {
     color: rgb(104, 102, 102);
     text-align: center;
@@ -372,6 +368,21 @@ main {
   }
 }
 
+.nav {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  &__item {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: white;
+  }
+}
+
 /*** Category Page ***/
 
 .category-page {
@@ -386,11 +397,10 @@ main {
     letter-spacing: 2px;
   }
   &__cards {
-    margin: 1.5rem;
+    margin: 1.5rem 1.5rem 5rem;
     display: flex;
     flex-direction: column;
     gap: 7.5rem;
-    padding-bottom: 5rem;
   }
 }
 
@@ -399,6 +409,13 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  .new-product--orange {
+    margin-bottom: 1.5rem;
+  }
+  &__img {
+    margin-bottom: 2rem;
+    border-radius: 8px;
+  }
   &__desc {
     text-align: center;
     font-size: 0.9375rem;
@@ -412,7 +429,7 @@ main {
   }
 }
 
-/*** Product Detail Section/Route ***/
+/*** Product Detail Page ***/
 
 .product-detail {
   padding: 1rem 1.5rem;
@@ -424,11 +441,18 @@ main {
 
   &__product-img {
     border-radius: 8px;
-    padding-top: 1.5rem;
+    margin: 1.5rem 0 0;
+    width: 100%;
+    &.new {
+      margin-bottom: 2rem;
+    }
   }
 
   &__name {
-    padding-top: 1.5rem;
+    padding-top: 2.5rem;
+    &.new {
+      padding-top: 1.5rem;
+    }
   }
 
   &__p {
@@ -436,6 +460,7 @@ main {
     line-height: 25px;
     opacity: 0.5;
     font-size: 0.9375rem;
+    white-space: pre-wrap;
   }
 
   &__price {
@@ -590,6 +615,12 @@ main {
   }
 }
 
+/*
+******************************************
+Tablet
+******************************************
+*/
+
 @media (min-width: 750px) {
   .header {
     gap: 2.625rem;
@@ -597,6 +628,7 @@ main {
       margin-left: auto;
     }
   }
+
   .hero {
     background-image: url("/public/assets/home/tablet/image-header.jpg");
     padding: 7.875rem 11.625rem 10.5rem;
@@ -612,8 +644,12 @@ main {
     }
   }
 
+  .home {
+    margin: 0 2.5rem;
+  }
+
   .category-section {
-    padding: 9.25rem 2.5rem 0;
+    padding: 9.25rem 0 0;
     &__cards {
       gap: 0.6125rem;
       flex-direction: row;
@@ -622,12 +658,6 @@ main {
 
   .product-highlights {
     gap: 2rem;
-  }
-
-  .product-highlight-a,
-  .product-highlight-b {
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
   }
 
   .product-highlight-a {
@@ -650,7 +680,6 @@ main {
     gap: 11px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 2.5rem;
     &__img {
       background-image: url(/public/assets/home/tablet/image-earphones-yx1.jpg);
       background-position: center center;
@@ -682,6 +711,12 @@ main {
     }
   }
 
+  .nav {
+    padding: 2rem 0;
+    flex-direction: row;
+    gap: 2.125rem;
+  }
+
   .footer {
     padding: 3.75rem 2.5rem 2.875rem;
     align-items: flex-start;
@@ -689,11 +724,7 @@ main {
       transform: unset;
       left: 2.5rem;
     }
-    &__nav {
-      padding: 2rem 0;
-      flex-direction: row;
-      gap: 2.125rem;
-    }
+
     &__copyright-logos {
       width: 100%;
       flex-direction: row;
@@ -705,24 +736,126 @@ main {
   }
 
   .category-page {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
     &__heading {
       font-size: 2.5rem;
       padding: 105px 0 97px;
     }
   }
+  .category-page__cards {
+    margin: 7.5rem 0 0;
+  }
   .category-page-card {
-    &__img {
+    &__picture {
       width: 100%;
     }
+    &__img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 3.25rem;
+    }
+    .new-product--orange {
+      margin-bottom: 1rem;
+    }
+
     &__name {
       font-size: 2.5rem;
       line-height: 44px;
       max-width: 300px;
       text-align: center;
-      padding-top: 1rem;
+      padding-top: 0;
     }
     &__desc {
       max-width: 565px;
     }
+  }
+
+  .category-section {
+    padding-top: 10.75rem;
+  }
+  .about {
+    &__heading {
+      margin: 0 5rem;
+    }
+  }
+  .footer {
+    &__orange-line {
+      transform: none;
+      left: 2.5rem;
+    }
+  }
+
+  .product-detail {
+    padding: 2rem 2.5rem;
+    &__flex {
+      display: flex;
+      align-items: center;
+      gap: 4.375rem;
+    }
+    &__picture {
+      width: 100%;
+    }
+    &__subheading {
+      text-align: left;
+    }
+
+    &__in-the-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 7.5rem;
+      & > * {
+        padding-top: 0;
+      }
+    }
+    &__images {
+      display: grid;
+      grid-template: 1fr 1fr / 0.7fr 1fr;
+
+      &--third {
+        grid-row: 1 / span 2;
+        grid-column: 2;
+      }
+    }
+    &__others {
+      flex-direction: row;
+      gap: 11px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    background-color: #191919;
+    padding: 0 10.3125rem;
+    .nav {
+      display: flex;
+    }
+    &__container {
+      background-color: #191919;
+      padding: 0;
+    }
+    &__hamburger {
+      display: none;
+    }
+  }
+  .hero {
+    background-image: url("/public/assets/home/desktop/image-hero.jpg");
+    align-items: flex-start;
+    text-align: left;
+    &__heading {
+      text-align: left;
+    }
+    &__p {
+      text-align: left;
+    }
+  }
+
+  .home {
+    margin-left: 10.3125rem;
+    margin-right: 10.3125rem;
+  }
+
+  .product-highlight-a {
   }
 }
