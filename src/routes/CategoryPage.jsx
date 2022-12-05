@@ -11,15 +11,17 @@ const CategoryPage = ({ productData, category }) => {
     });
 
   return (
-    <main className="category-page">
+    <section>
       <h2 className="category-page__heading">{category}</h2>
-      <ul className="category-page__cards">
-        {products.map((product) => (
-          <CategoryPageCard key={product.id} product={product} />
-        ))}
-      </ul>
-      <CategorySection />
-    </main>
+      <main className="category-page">
+        <ul className="category-page__cards">
+          {products.map((product) => (
+            <CategoryPageCard key={product.id} product={product} />
+          ))}
+        </ul>
+        <CategorySection />
+      </main>
+    </section>
   );
 };
 

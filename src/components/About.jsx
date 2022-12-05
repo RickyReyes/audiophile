@@ -4,7 +4,7 @@ const About = () => {
   return (
     <article className="about">
       <div className="about__img" />
-      <div>
+      <div className="about__content">
         <h4 className="about__heading">
           Bringing you the{" "}
           <span className="about__heading--highlight">best</span> audio gear
