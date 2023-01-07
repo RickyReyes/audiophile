@@ -7,11 +7,11 @@ const CategoryPageCard = ({ product }) => {
       <picture className="category-page-card__picture">
         <source
           media="(min-width: 1000px)"
-          srcset={`/assets/product-${product.slug}/desktop/image-category-page-preview.jpg`}
+          srcSet={`/assets/product-${product.slug}/desktop/image-category-page-preview.jpg`}
         />
         <source
           media="(min-width: 750px)"
-          srcset={`/assets/product-${product.slug}/tablet/image-category-page-preview.jpg`}
+          srcSet={`/assets/product-${product.slug}/tablet/image-category-page-preview.jpg`}
         />
         <img
           className="category-page-card__img"

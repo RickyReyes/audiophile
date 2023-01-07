@@ -19,7 +19,6 @@ const ProductHighlightA = ({ product }) => {
           <button className="btn btn--black">See product</button>
         </Link>
       </div>
-      =
     </article>
   );
 };

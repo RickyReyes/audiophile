@@ -8,11 +8,11 @@ import Header from "./components/Header";
 import Cart from "./components/Cart";
 import About from "./components/About";
 import Footer from "./components/Footer";
+import CategorySection from "./components/CategorySection";
 
 import Home from "./routes/Home";
 import CategoryPage from "./routes/CategoryPage";
 import ProductDetailSection from "./routes/ProductDetailSection";
-import CategorySection from "./components/CategorySection";
 
 function App() {
   const { pathname } = useLocation();
@@ -27,12 +27,22 @@ function App() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [cart, setCart] = useState([]);
-  /* 
-   const cart = [{
-    product: {}
-    amount: 3
-   }]
-  */
+
+  function handleAddToCart(productObj, quantity) {
+    setCart((prevCart) => {
+      if (prevCart.find((item) => item.product.name === productObj.name)) {
+        return prevCart.map((item) => {
+          if (item.name === productObj.name) {
+            return { quantity: quantity, product: productObj };
+          } else {
+            return item;
+          }
+        });
+      }
+      return [...prevCart, { quantity: quantity, product: productObj }];
+    });
+    console.log(cart);
+  }
 
   return (
     <div className="App">
@@ -60,6 +70,7 @@ function App() {
                 productData={productData}
                 cart={cart}
                 setCart={setCart}
+                handleAddToCart={handleAddToCart}
               />
             }
           />

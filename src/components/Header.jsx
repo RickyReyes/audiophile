@@ -7,7 +7,7 @@ const Header = ({ setShowMobileMenu, setShowCart }) => {
     <header className="header">
       <div className="header__container">
         <img
-          className="header__hamburger"
+          className="hamburger"
           onClick={() => setShowMobileMenu((prev) => !prev)}
           src="/assets/shared/tablet/icon-hamburger.svg"
           alt="hamburger icon"
@@ -21,7 +21,7 @@ const Header = ({ setShowMobileMenu, setShowCart }) => {
         </Link>
         <Nav />
         <img
-          className="header__cart-icon"
+          className="cart-icon"
           src="/assets/shared/desktop/icon-cart.svg"
           onClick={() => setShowCart((prev) => !prev)}
           alt="cart icon"

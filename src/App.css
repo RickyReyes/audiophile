@@ -95,13 +95,11 @@ ul {
 
 *,
 *::before,
-*::after {
+*::after,
+input {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
   font-family: "Manrope";
 }
 
@@ -122,7 +120,8 @@ main {
   border-bottom: 1px solid #3d3d3d;
   height: 90px;
 }
-.header__container__hamburger, .header__container__cart-icon {
+.header__container .hamburger,
+.header__container .cart-icon {
   cursor: pointer;
 }
 .header__container .nav {
@@ -166,6 +165,7 @@ main {
 .category-section {
   padding-top: 5.75rem;
   background-color: white;
+  margin: 0 1.5rem;
 }
 .category-section__cards {
   display: flex;
@@ -392,7 +392,7 @@ main {
   color: white;
 }
 
-/*** Category Page ***/
+/*** Category Page (ie. HEADPHONERS, SPEAKERS, EARPHONES ***/
 .category-page__heading {
   padding-top: 1.5rem;
   font-size: 1.75rem;
@@ -492,13 +492,15 @@ main {
   width: 120px;
   font-weight: 700;
 }
-.product-detail .quantity-operator {
+.product-detail__amount__operator {
   opacity: 0.5;
   cursor: pointer;
 }
 .product-detail__subheading {
+  margin-top: 5.5rem;
+}
+.product-detail .center {
   text-align: center;
-  padding-top: 5.5rem;
 }
 .product-detail__includes {
   padding-top: 1.5rem;
@@ -633,12 +635,12 @@ Tablet
     gap: 2.625rem;
     margin: 0;
   }
-  .header .cart-icon {
-    margin-left: auto;
+  .header__container {
+    justify-content: space-between;
   }
   .hero {
     background-image: url("/public/assets/home/tablet/image-header.jpg");
-    padding: 7.875rem 11.625rem 10.5rem;
+    padding: 7.875rem 10.3125rem 10.5rem;
   }
   .hero__heading {
     font-size: 3.5rem;
@@ -809,6 +811,11 @@ Tablet
     gap: 11px;
   }
 }
+/*
+******************************************
+Desktop
+******************************************
+*/
 @media (min-width: 1000px) {
   .header {
     background-color: #191919;
@@ -821,7 +828,7 @@ Tablet
     background-color: #191919;
     padding: 0;
   }
-  .header__hamburger {
+  .header .hamburger {
     display: none;
   }
   .hero {

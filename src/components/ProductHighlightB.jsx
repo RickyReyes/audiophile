@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 const ProductHighlightB = ({ product }) => {
   return (
     <div className="product-highlight-b">
