@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import AmountAndButton from "../components/AmountAndButton";
 import CategorySection from "../components/CategorySection";
 
-const ProductDetailSection = ({ product, productData, cart, setCart }) => {
+const ProductDetailSection = ({ handleAddToCart, product }) => {
   const navigate = useNavigate();
   const pathname = useLocation();
   useEffect(() => {
@@ -11,7 +10,7 @@ const ProductDetailSection = ({ product, productData, cart, setCart }) => {
   }, [pathname]);
 
   const [amountToAdd, setAmountToAdd] = useState(1);
-  console.log(product.features);
+
   return (
     <section className="product-detail">
       <p className="product-detail__go-back" onClick={() => navigate(-1)}>
@@ -21,12 +20,12 @@ const ProductDetailSection = ({ product, productData, cart, setCart }) => {
         <picture className="product-detail__picture">
           <source
             media="(min-width: 750px)"
-            srcset={`/assets/product-${product.slug}/tablet/image-product.jpg`}
+            srcSet={`/assets/product-${product.slug}/tablet/image-product.jpg`}
           />
-          {/* <source
-          media="(min-width: 1200px)"
-          srcset={product.image.desktop.substring(1)}
-        /> */}
+          <source
+            media="(min-width: 1200px)"
+            srcSet={product.image.desktop.substring(1)}
+          />
           <img
             className={`product-detail__product-img ${
               product.new ? "new" : ""
@@ -49,7 +48,9 @@ const ProductDetailSection = ({ product, productData, cart, setCart }) => {
           <div className="product-detail__amount-and-btn">
             <div className="product-detail__amount-container">
               <div
-                onClick={() => setAmountToAdd((prev) => prev - 1)}
+                onClick={() =>
+                  setAmountToAdd((prev) => (prev === 1 ? prev : prev - 1))
+                }
                 className="product-detail__amount__operator"
               >
                 -
@@ -62,7 +63,12 @@ const ProductDetailSection = ({ product, productData, cart, setCart }) => {
                 +
               </div>
             </div>
-            <button className="btn btn--orange">Add to Cart</button>
+            <button
+              className="btn btn--orange"
+              onClick={() => handleAddToCart(product, amountToAdd)}
+            >
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
@@ -88,7 +94,7 @@ const ProductDetailSection = ({ product, productData, cart, setCart }) => {
           <picture>
             <source
               media="(min-width: 750px)"
-              srcset={product.gallery.first.tablet.substring(1)}
+              srcSet={product.gallery.first.tablet.substring(1)}
             ></source>
             <img
               src={product.gallery.first.mobile.substring(1)}
@@ -100,7 +106,7 @@ const ProductDetailSection = ({ product, productData, cart, setCart }) => {
           <picture>
             <source
               media="(min-width: 750px)"
-              srcset={product.gallery.second.tablet.substring(1)}
+              srcSet={product.gallery.second.tablet.substring(1)}
             ></source>
             <img
               src={product.gallery.second.mobile.substring(1)}
@@ -112,7 +118,7 @@ const ProductDetailSection = ({ product, productData, cart, setCart }) => {
           <picture>
             <source
               media="(min-width: 750px)"
-              srcset={product.gallery.third.tablet.substring(1)}
+              srcSet={product.gallery.third.tablet.substring(1)}
             ></source>
             <img
               src={product.gallery.third.mobile.substring(1)}
@@ -121,7 +127,7 @@ const ProductDetailSection = ({ product, productData, cart, setCart }) => {
           </picture>
         </li>
       </ul>
-      <h4 className="product-detail__subheading">You may also like</h4>
+      <h4 className="product-detail__subheading center">You may also like</h4>
       <ul className="product-detail__others">
         {product.others.map((otherObj) => {
           return (
@@ -129,7 +135,7 @@ const ProductDetailSection = ({ product, productData, cart, setCart }) => {
               <picture>
                 <source
                   media="(min-width: 750px)"
-                  srcset={otherObj.image.tablet.substring(1)}
+                  srcSet={otherObj.image.tablet.substring(1)}
                 ></source>
                 <img
                   className="product-detail__other__img"
