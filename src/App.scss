@@ -569,61 +569,70 @@ main {
   padding: 2rem 1.75rem;
   border-radius: 8px;
   width: calc(100% - 3rem);
-  h1 {
-    background-color: white;
-    color: black;
-    font-size: 1.125rem;
-    padding: 0;
-  }
-  .cart-header {
+  &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .remove-all {
+  &__heading {
+    background-color: white;
+    color: black;
+    font-size: 1.125rem;
+    padding: 0;
+    letter-spacing: 1.29px;
+  }
+  &__remove-all {
     border: 0;
     opacity: 0.5;
     background-color: white;
     text-decoration: underline;
     text-decoration-thickness: 0.01em;
     font-size: 0.9375rem;
+    cursor: pointer;
   }
-  .cart-rows {
+  &__rows {
     padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
-  .cart-row {
+  &__row {
     display: flex;
     align-items: center;
     gap: 1rem;
   }
-  .name-and-price {
+  &__name-and-price {
     margin-right: auto;
   }
-  .price {
+  &__price {
     opacity: 0.5;
+    font-weight: 700;
   }
-  img {
+  &__img {
     width: 64px;
     height: 64px;
     border-radius: 8px;
   }
-  .total-flex {
+  &__total-flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 2rem;
   }
-  .total-word {
+  &__total-word {
     font-size: 0.9375rem;
     opacity: 0.5;
     text-transform: uppercase;
   }
-  .total-number {
+  &__total-number {
     font-size: 1.125rem;
   }
-  button {
+  &__checkout-btn {
     @include btn;
     width: 100%;
     margin-top: 1.5rem;
+    background-color: $Orange;
+    color: white;
   }
 }
 

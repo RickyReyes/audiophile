@@ -41,14 +41,13 @@ function App() {
       }
       return [...prevCart, { quantity: quantity, product: productObj }];
     });
-    console.log(cart);
   }
 
   return (
     <div className="App">
       <Header setShowMobileMenu={setShowMobileMenu} setShowCart={setShowCart} />
       {showMobileMenu && <CategorySection mobileMenu={true} />}
-      {showCart && <Cart cart={cart} />}
+      {showCart && <Cart cart={cart} setCart={setCart} />}
       <Routes>
         <Route path="/" element={<Home productData={productData} />} />
         {categories.map((category) => (
