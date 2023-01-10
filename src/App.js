@@ -1,7 +1,7 @@
 import "./App.css";
 import data from "./starter-code/data.json";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Header from "./components/Header";
@@ -13,10 +13,10 @@ import CategorySection from "./components/CategorySection";
 import Home from "./routes/Home";
 import CategoryPage from "./routes/CategoryPage";
 import ProductDetailSection from "./routes/ProductDetailSection";
+import { CartContext } from "./cartContext";
 
 function App() {
   const { pathname } = useLocation();
-
   useEffect(() => {
     window.scrollTo(0, 0);
     setShowMobileMenu(false);
@@ -25,23 +25,9 @@ function App() {
   const categories = ["headphones", "speakers", "earphones"];
   const [productData] = useState(data);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [showCart, setShowCart] = useState(false);
-  const [cart, setCart] = useState([]);
 
-  function handleAddToCart(productObj, quantity) {
-    setCart((prevCart) => {
-      if (prevCart.find((item) => item.product.name === productObj.name)) {
-        return prevCart.map((item) => {
-          if (item.name === productObj.name) {
-            return { quantity: quantity, product: productObj };
-          } else {
-            return item;
-          }
-        });
-      }
-      return [...prevCart, { quantity: quantity, product: productObj }];
-    });
-  }
+  const { cart, setCart, showCart, setShowCart, handleAddToCart } =
+    useContext(CartContext);
 
   return (
     <div className="App">
