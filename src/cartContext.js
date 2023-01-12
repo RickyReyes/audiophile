@@ -6,6 +6,7 @@ function CartContextProvider(props) {
   const [cart, setCart] = useState([]);
 
   function handleAddToCart(productObj, quantity) {
+    setShowCart(true);
     setCart((prevCart) => {
       if (prevCart.find((item) => item.product.name === productObj.name)) {
         return prevCart.map((item) => {
@@ -21,17 +22,24 @@ function CartContextProvider(props) {
   }
 
   function handleQuantityChange(id, value) {
+    // Handle REMOVE from cart (quantity goes from 1 to 0)
+    let product = cart.find((item) => item.product.id === id);
+    if (value === -1 && product.quantity === 1) {
+      setCart((prevCart) => prevCart.filter((item) => item.product.id !== id));
+      return;
+    }
+
     setCart((prevCart) =>
       prevCart.map((cartItem) => {
         if (cartItem.product.id === id) {
-          return { ...cartItem, quantity: cartItem.quantity + value };
-        } else {
-          return cartItem;
+          let newQuantity = cartItem.quantity + value;
+          return { ...cartItem, quantity: newQuantity };
         }
+        return cartItem;
       })
     );
-    console.log(cart);
   }
+
   return (
     <CartContext.Provider
       value={{

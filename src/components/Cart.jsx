@@ -3,7 +3,7 @@ import QuantityBar from "./QuantityBar";
 
 const Cart = ({ cart, setCart }) => {
   let totalAmountDue = cart.reduce((total, cartItem) => {
-    return total + cartItem.product.price * cartItem.quantity;
+    return total + cartItem?.product.price * cartItem.quantity;
   }, 0);
 
   return (
