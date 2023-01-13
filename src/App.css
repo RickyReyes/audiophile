@@ -11,6 +11,9 @@
   background-color: #d87d4a;
   color: white;
 }
+.btn--orange:hover {
+  background-color: #fbaf85;
+}
 
 .btn--black {
   display: block;
@@ -23,6 +26,9 @@
   font-weight: 600;
   background-color: black;
   color: white;
+}
+.btn--black:hover {
+  background-color: #4c4c4c;
 }
 
 .btn--black-border {
@@ -37,6 +43,10 @@
   background-color: transparent;
   border: 1px solid black;
   color: black;
+}
+.btn--black-border:hover {
+  background-color: black;
+  color: white;
 }
 
 .new-product {
@@ -124,6 +134,10 @@ main {
 .header__container .cart-icon {
   cursor: pointer;
 }
+.header__container .hamburger:hover,
+.header__container .cart-icon:hover {
+  filter: invert(80%) sepia(30%) saturate(6866%) hue-rotate(389deg) brightness(122%) contrast(82%);
+}
 .header__container .nav {
   display: none;
 }
@@ -170,6 +184,17 @@ main {
   width: 100%;
   gap: 4.25rem;
 }
+.category-section.mobile {
+  position: fixed;
+  box-shadow: 0px 500px 10px 10px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  border-radius: 0px 0px 8px 8px;
+  width: 100%;
+  margin: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-bottom: 2.25rem;
+}
 
 .category-section-card {
   width: 100%;
@@ -209,6 +234,9 @@ main {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 1px;
+}
+.category-section-card:hover .category-section-card__shop {
+  color: #d87d4a;
 }
 
 .product-highlights {
@@ -252,15 +280,6 @@ main {
   max-width: 23rem;
 }
 .product-highlight-a .btn {
-  display: block;
-  border: 0;
-  font-size: 0.8125rem;
-  text-transform: uppercase;
-  padding: 15px 30px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  font-weight: 600;
-  background-color: black;
   margin-top: 1.5rem;
 }
 
@@ -345,9 +364,6 @@ main {
   left: 50%;
   transform: translateX(-50%);
 }
-.footer .logo {
-  cursor: pointer;
-}
 .footer__p {
   color: rgb(104, 102, 102);
   text-align: center;
@@ -375,6 +391,9 @@ main {
 .footer__logos__logo {
   cursor: pointer;
 }
+.footer__logos__logo:hover {
+  filter: invert(80%) sepia(30%) saturate(6866%) hue-rotate(389deg) brightness(122%) contrast(82%);
+}
 
 .nav {
   padding: 3rem 0;
@@ -389,6 +408,9 @@ main {
   letter-spacing: 2px;
   font-weight: 600;
   color: white;
+}
+.nav__item:hover {
+  color: #d87d4a;
 }
 
 /*** Category Page (ie. HEADPHONERS, SPEAKERS, EARPHONES ***/
@@ -451,6 +473,9 @@ main {
   opacity: 0.5;
   display: inline;
 }
+.product-detail__go-back:hover {
+  color: #d87d4a;
+}
 .product-detail__product-img {
   border-radius: 8px;
   margin: 1.5rem 0 0;
@@ -484,7 +509,10 @@ main {
   justify-content: start;
   padding-top: 2rem;
 }
-.product-detail__subheading {
+.product-detail__features-box-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
   margin-top: 5.5rem;
 }
 .product-detail .center {
@@ -521,6 +549,9 @@ main {
   border-radius: 8px;
 }
 .product-detail__others {
+  margin-top: 5.5rem;
+}
+.product-detail__others-ul {
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
@@ -552,6 +583,9 @@ main {
   opacity: 0.5;
   cursor: pointer;
 }
+.quantity-bar__operator:hover {
+  color: #d87d4a;
+}
 
 .cart {
   z-index: 1;
@@ -563,6 +597,8 @@ main {
   padding: 2rem 1.75rem;
   border-radius: 8px;
   width: calc(100% - 3rem);
+  max-width: 377px;
+  box-shadow: 0px 300px 10px 10000px rgba(0, 0, 0, 0.5);
 }
 .cart__header {
   display: flex;
@@ -584,6 +620,9 @@ main {
   text-decoration-thickness: 0.01em;
   font-size: 0.9375rem;
   cursor: pointer;
+}
+.cart__remove-all:hover {
+  color: #d87d4a;
 }
 .cart__empty {
   text-align: center;
@@ -626,19 +665,9 @@ main {
 .cart__total-number {
   font-size: 1.125rem;
 }
-.cart__checkout-btn {
-  display: block;
-  border: 0;
-  font-size: 0.8125rem;
-  text-transform: uppercase;
-  padding: 15px 30px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  font-weight: 600;
+.cart .btn {
   width: 100%;
   margin-top: 1.5rem;
-  background-color: #d87d4a;
-  color: white;
 }
 
 /*
@@ -680,6 +709,10 @@ Tablet
   .category-section__cards {
     gap: 0.6125rem;
     flex-direction: row;
+  }
+  .category-section.mobile {
+    padding-top: 6.75rem;
+    box-shadow: 0px 300px 10px 10000px rgba(0, 0, 0, 0.5);
   }
   .product-highlights {
     gap: 2rem;
@@ -795,7 +828,7 @@ Tablet
   .product-detail {
     padding: 2rem 2.5rem;
   }
-  .product-detail__flex {
+  .product-detail__main-flex {
     display: flex;
     align-items: center;
     gap: 4.375rem;
@@ -806,12 +839,11 @@ Tablet
   .product-detail__subheading {
     text-align: left;
   }
-  .product-detail__in-the-box {
+  .product-detail__features-box-flex__in-the-box {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 7.5rem;
   }
-  .product-detail__in-the-box > * {
+  .product-detail__features-box-flex__in-the-box > * {
     padding-top: 0;
   }
   .product-detail__images {
@@ -822,9 +854,16 @@ Tablet
     grid-row: 1/span 2;
     grid-column: 2;
   }
-  .product-detail__others {
+  .product-detail__others-ul {
     flex-direction: row;
     gap: 11px;
+  }
+  .cart {
+    position: fixed;
+    left: 50%;
+    transform: translateX(0%);
+    right: 2.5rem;
+    margin-left: auto;
   }
 }
 /*
@@ -861,6 +900,15 @@ Desktop
   .home {
     margin-left: 10.3125rem;
     margin-right: 10.3125rem;
+  }
+  .category-section {
+    margin: 0;
+  }
+  .product-highlights > * {
+    margin: 0;
+  }
+  .category-section.mobile {
+    display: none;
   }
   .product-highlight-a {
     display: grid;
@@ -918,7 +966,7 @@ Desktop
   .about__heading {
     text-align: left;
     margin: 0;
-    max-width: 20ch;
+    max-width: 15ch;
   }
   .about__p {
     margin: 0;
@@ -958,5 +1006,30 @@ Desktop
   }
   .category-page-card__desc {
     text-align: left;
+  }
+  .product-detail {
+    padding: 5rem 10.3125rem 0;
+  }
+  .product-detail__product-img {
+    margin-top: 3.5rem;
+  }
+  .product-detail__description {
+    max-width: 85ch;
+  }
+  .product-detail__features-box-flex {
+    flex-direction: row;
+    gap: 7.8125rem;
+  }
+  .product-detail__in-the-box {
+    flex-basis: 145%;
+  }
+  .product-detail__images {
+    margin-top: 10rem;
+  }
+  .product-detail__others {
+    margin-top: 10rem;
+  }
+  .cart {
+    right: 10.3125rem;
   }
 }/*# sourceMappingURL=App.css.map */

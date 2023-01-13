@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CategorySectionCard = ({ src, name }) => {
+const CategorySectionCard = ({ src, name, mobileMenu }) => {
   return (
-    <li className="category-section-card">
+    <li
+      className="category-section-card"
+      style={mobileMenu ? { width: "100%" } : {}}
+    >
       <Link className="category-section-card--flex" to={`/${name}`}>
         <img
           className="category-section-card__img"

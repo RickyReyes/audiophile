@@ -47,7 +47,7 @@ const Cart = ({ cart, setCart }) => {
             <div className="cart__total-word">Total</div>
             <strong>$ {totalAmountDue}</strong>
           </div>
-          <button className="btn cart__checkout-btn">Checkout</button>
+          <button className="btn btn--orange">Checkout</button>
         </div>
       )}
     </section>

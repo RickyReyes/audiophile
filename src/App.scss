@@ -24,12 +24,18 @@ $Dark-Gray: #4c4c4c;
   @include btn;
   background-color: $Orange;
   color: white;
+  &:hover {
+    background-color: $Light-Orange;
+  }
 }
 
 .btn--black {
   @include btn;
   background-color: black;
   color: white;
+  &:hover {
+    background-color: $Dark-Gray;
+  }
 }
 
 .btn--black-border {
@@ -37,6 +43,10 @@ $Dark-Gray: #4c4c4c;
   background-color: transparent;
   border: 1px solid black;
   color: black;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
 }
 
 @mixin new-product {
@@ -121,6 +131,10 @@ main {
   .hamburger,
   .cart-icon {
     cursor: pointer;
+    &:hover {
+      filter: invert(80%) sepia(30%) saturate(6866%) hue-rotate(389deg)
+        brightness(122%) contrast(82%);
+    }
   }
   .nav {
     display: none;
@@ -168,6 +182,17 @@ main {
     width: 100%;
     gap: 4.25rem;
   }
+  &.mobile {
+    position: fixed;
+    box-shadow: 0px 500px 10px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 0px 0px 8px 8px;
+    width: 100%;
+    margin: 0;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 2.25rem;
+  }
 }
 
 .category-section-card {
@@ -207,6 +232,9 @@ main {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 1px;
+  }
+  &:hover &__shop {
+    color: $Orange;
   }
 }
 
@@ -250,8 +278,6 @@ main {
     max-width: 23rem;
   }
   .btn {
-    @include btn;
-    background-color: black;
     margin-top: 1.5rem;
   }
 }
@@ -338,9 +364,6 @@ main {
     left: 50%;
     transform: translateX(-50%);
   }
-  .logo {
-    cursor: pointer;
-  }
 
   &__p {
     color: rgb(104, 102, 102);
@@ -367,6 +390,10 @@ main {
     gap: 1rem;
     &__logo {
       cursor: pointer;
+      &:hover {
+        filter: invert(80%) sepia(30%) saturate(6866%) hue-rotate(389deg)
+          brightness(122%) contrast(82%);
+      }
     }
   }
 }
@@ -383,6 +410,9 @@ main {
     letter-spacing: 2px;
     font-weight: 600;
     color: white;
+    &:hover {
+      color: $Orange;
+    }
   }
 }
 
@@ -448,6 +478,9 @@ main {
     cursor: pointer;
     opacity: 0.5;
     display: inline;
+    &:hover {
+      color: $Orange;
+    }
   }
 
   &__product-img {
@@ -488,7 +521,10 @@ main {
     padding-top: 2rem;
   }
 
-  &__subheading {
+  &__features-box-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 5.5rem;
     margin-top: 5.5rem;
   }
 
@@ -527,6 +563,10 @@ main {
     }
   }
   &__others {
+    margin-top: 5.5rem;
+  }
+
+  &__others-ul {
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
@@ -557,6 +597,9 @@ main {
   &__operator {
     opacity: 0.5;
     cursor: pointer;
+    &:hover {
+      color: $Orange;
+    }
   }
 }
 
@@ -570,6 +613,8 @@ main {
   padding: 2rem 1.75rem;
   border-radius: 8px;
   width: calc(100% - 3rem);
+  max-width: 377px;
+  box-shadow: 0px 300px 10px 10000px rgba(0, 0, 0, 0.5);
   &__header {
     display: flex;
     align-items: center;
@@ -590,6 +635,9 @@ main {
     text-decoration-thickness: 0.01em;
     font-size: 0.9375rem;
     cursor: pointer;
+    &:hover {
+      color: $Orange;
+    }
   }
   &__empty {
     text-align: center;
@@ -632,12 +680,9 @@ main {
   &__total-number {
     font-size: 1.125rem;
   }
-  &__checkout-btn {
-    @include btn;
+  .btn {
     width: 100%;
     margin-top: 1.5rem;
-    background-color: $Orange;
-    color: white;
   }
 }
 
@@ -684,6 +729,10 @@ Tablet
     &__cards {
       gap: 0.6125rem;
       flex-direction: row;
+    }
+    &.mobile {
+      padding-top: 6.75rem;
+      box-shadow: 0px 300px 10px 10000px rgba(0, 0, 0, 0.5);
     }
   }
 
@@ -804,6 +853,7 @@ Tablet
   .category-section {
     padding-top: 10.75rem;
   }
+
   .about {
     &__heading {
       margin: 0 5rem;
@@ -818,7 +868,7 @@ Tablet
 
   .product-detail {
     padding: 2rem 2.5rem;
-    &__flex {
+    &__main-flex {
       display: flex;
       align-items: center;
       gap: 4.375rem;
@@ -830,12 +880,13 @@ Tablet
       text-align: left;
     }
 
-    &__in-the-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: 7.5rem;
-      & > * {
-        padding-top: 0;
+    &__features-box-flex {
+      &__in-the-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        & > * {
+          padding-top: 0;
+        }
       }
     }
     &__images {
@@ -847,10 +898,18 @@ Tablet
         grid-column: 2;
       }
     }
-    &__others {
+    &__others-ul {
       flex-direction: row;
       gap: 11px;
     }
+  }
+
+  .cart {
+    position: fixed;
+    left: 50%;
+    transform: translateX(0%);
+    right: 2.5rem;
+    margin-left: auto;
   }
 }
 
@@ -891,6 +950,18 @@ Desktop
   .home {
     margin-left: 10.3125rem;
     margin-right: 10.3125rem;
+  }
+
+  .category-section {
+    margin: 0;
+  }
+
+  .product-highlights > * {
+    margin: 0;
+  }
+
+  .category-section.mobile {
+    display: none;
   }
 
   .product-highlight-a {
@@ -952,7 +1023,7 @@ Desktop
     &__heading {
       text-align: left;
       margin: 0;
-      max-width: 20ch;
+      max-width: 15ch;
     }
     &__p {
       margin: 0;
@@ -995,5 +1066,32 @@ Desktop
     &__desc {
       text-align: left;
     }
+  }
+
+  .product-detail {
+    padding: 5rem 10.3125rem 0;
+    &__product-img {
+      margin-top: 3.5rem;
+    }
+    &__description {
+      max-width: 85ch;
+    }
+    &__features-box-flex {
+      flex-direction: row;
+      gap: 7.8125rem;
+    }
+    &__in-the-box {
+      flex-basis: 145%;
+    }
+    &__images {
+      margin-top: 10rem;
+    }
+    &__others {
+      margin-top: 10rem;
+    }
+  }
+
+  .cart {
+    right: 10.3125rem;
   }
 }

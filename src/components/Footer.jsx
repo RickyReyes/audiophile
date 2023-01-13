@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Nav from "./Nav";
+import FooterLogos from "./FooterLogos";
 
 const Footer = () => {
   return (
@@ -24,29 +25,7 @@ const Footer = () => {
         <small className="footer__copyright">
           Copyright 2021. All Rights Reserved
         </small>
-        <ul className="footer__logos">
-          <li>
-            <img
-              className="footer__logos__logo"
-              src="/assets/shared/desktop/icon-facebook.svg"
-              alt="facebook logo"
-            />
-          </li>
-          <li>
-            <img
-              className="footer__logos__logo"
-              src="/assets/shared/desktop/icon-twitter.svg"
-              alt="twitter logo"
-            />
-          </li>
-          <li>
-            <img
-              className="footer__logos__logo"
-              src="/assets/shared/desktop/icon-instagram.svg"
-              alt="instagram logo"
-            />
-          </li>
-        </ul>
+        <FooterLogos />
       </div>
     </footer>
   );

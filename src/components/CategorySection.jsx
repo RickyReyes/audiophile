@@ -1,22 +1,11 @@
 import CategoryCard from "./CategorySectionCard";
 
+/* This component is used in the flow of all of the pages of this site, as well as the mobile menu, when mobileMenu === true.
+ */
 const CategorySection = ({ mobileMenu }) => {
+  console.log(mobileMenu);
   return (
-    <section
-      className="category-section"
-      style={
-        mobileMenu
-          ? {
-              position: "fixed",
-              overflow: "scroll",
-              boxShadow: "0px 500px 10px 10px rgba(0, 0, 0, 0.5)",
-              zIndex: 1,
-              paddingBottom: "35px",
-              borderRadius: "0px 0px 8px 8px",
-            }
-          : {}
-      }
-    >
+    <section className={`category-section ${mobileMenu ? "mobile" : ""}`}>
       <ul className="category-section__cards">
         <CategoryCard
           src="/assets/shared/desktop/image-category-thumbnail-headphones.png"

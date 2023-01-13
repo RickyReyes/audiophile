@@ -22,10 +22,16 @@ function App() {
     setShowMobileMenu(false);
   }, [pathname]);
 
-  const categories = ["headphones", "speakers", "earphones"];
+  // Gather the category names (i.e. "headphones", "earphones", "speakers" from the data)
+  const categoryNames = data.reduce((categoriesArray, currentProduct) => {
+    if (!categoriesArray.includes(currentProduct.category)) {
+      categoriesArray.push(currentProduct.category);
+    }
+    return categoriesArray;
+  }, []);
+
   const [productData] = useState(data);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-
   const { cart, setCart, showCart, setShowCart, handleAddToCart } =
     useContext(CartContext);
 
@@ -36,7 +42,7 @@ function App() {
       {showCart && <Cart cart={cart} setCart={setCart} />}
       <Routes>
         <Route path="/" element={<Home productData={productData} />} />
-        {categories.map((category) => (
+        {categoryNames.map((category) => (
           <Route
             key={category}
             path={`/${category}`}

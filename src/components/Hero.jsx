@@ -10,9 +10,9 @@ const Hero = ({ heroProduct }) => {
         Experience natural, lifelike audio and exceptional build quality made
         for the passionate music enthusiast.
       </p>
-      <button className="btn btn--orange">
-        <Link to={`/product/${heroProduct.slug}`}>See Product</Link>
-      </button>
+      <Link to={`/product/${heroProduct.slug}`}>
+        <button className="btn btn--orange">See Product</button>
+      </Link>
     </section>
   );
 };
