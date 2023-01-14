@@ -66,6 +66,15 @@ $Dark-Gray: #4c4c4c;
   color: $Orange;
 }
 
+.go-back {
+  cursor: pointer;
+  opacity: 0.5;
+  display: inline;
+  &:hover {
+    color: $Orange;
+  }
+}
+
 a {
   margin: 0;
   padding: 0;
@@ -683,6 +692,36 @@ main {
   .btn {
     width: 100%;
     margin-top: 1.5rem;
+  }
+}
+
+.checkout {
+  background-color: $Very-Light-Gray;
+  padding: 1rem 1.5rem;
+
+  &__container {
+    background-color: #fff;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  &__label {
+    font-size: 0.75rem;
+  }
+  &__heading {
+    padding-bottom: 0;
+  }
+  &__subheading {
+    color: $Orange;
+    text-transform: uppercase;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.93px;
+    display: block;
+    padding-top: 2rem;
+  }
+  &__label {
+    display: block;
   }
 }
 

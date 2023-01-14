@@ -5,6 +5,7 @@ import CategorySection from "../components/CategorySection";
 import ProductHighlightA from "../components/ProductHighlightA";
 import ProductHighlightB from "../components/ProductHighlightB";
 import ProductHighlightC from "../components/ProductHighlightC";
+import About from "../components/About";
 
 const Home = ({ productData }) => {
   const heroProduct = productData.find(
@@ -33,6 +34,7 @@ const Home = ({ productData }) => {
           <ProductHighlightB product={productB} />
           <ProductHighlightC product={productC} />
         </section>
+        <About />
       </section>
     </main>
   );

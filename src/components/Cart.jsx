@@ -1,10 +1,15 @@
 import React from "react";
 import QuantityBar from "./QuantityBar";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../cartContext";
 
 const Cart = ({ cart, setCart }) => {
   let totalAmountDue = cart.reduce((total, cartItem) => {
     return total + cartItem?.product.price * cartItem.quantity;
   }, 0);
+
+  const { setShowCart } = useContext(CartContext);
 
   return (
     <section className="cart">
@@ -47,7 +52,14 @@ const Cart = ({ cart, setCart }) => {
             <div className="cart__total-word">Total</div>
             <strong>$ {totalAmountDue}</strong>
           </div>
-          <button className="btn btn--orange">Checkout</button>
+          <Link to="/checkout">
+            <button
+              onClick={() => setShowCart(false)}
+              className="btn btn--orange"
+            >
+              Checkout
+            </button>
+          </Link>
         </div>
       )}
     </section>

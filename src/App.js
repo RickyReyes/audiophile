@@ -12,6 +12,7 @@ import CategorySection from "./components/CategorySection";
 
 import Home from "./routes/Home";
 import CategoryPage from "./routes/CategoryPage";
+import CheckoutPage from "./routes/CheckoutPage";
 import ProductDetailSection from "./routes/ProductDetailSection";
 import { CartContext } from "./cartContext";
 
@@ -42,6 +43,7 @@ function App() {
       {showCart && <Cart cart={cart} setCart={setCart} />}
       <Routes>
         <Route path="/" element={<Home productData={productData} />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
         {categoryNames.map((category) => (
           <Route
             key={category}
@@ -67,7 +69,6 @@ function App() {
           />
         ))}
       </Routes>
-      <About />
       <Footer />
     </div>
   );

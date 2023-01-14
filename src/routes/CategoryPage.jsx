@@ -1,6 +1,7 @@
 import React from "react";
 import CategoryPageCard from "../components/CategoryPageCard";
 import CategorySection from "../components/CategorySection";
+import About from "../components/About";
 
 const CategoryPage = ({ productData, category }) => {
   // Sorted by putting products whose "new" property is true first
@@ -20,6 +21,7 @@ const CategoryPage = ({ productData, category }) => {
           ))}
         </ul>
         <CategorySection />
+        <About />
       </main>
     </section>
   );

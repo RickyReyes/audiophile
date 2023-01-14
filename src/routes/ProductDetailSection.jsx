@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import CategorySection from "../components/CategorySection";
+import About from "../components/About";
 
 const ProductDetailSection = ({ handleAddToCart, product }) => {
   const navigate = useNavigate();
@@ -160,6 +161,7 @@ const ProductDetailSection = ({ handleAddToCart, product }) => {
         </ul>
       </section>
       <CategorySection />
+      <About />
     </section>
   );
 };
