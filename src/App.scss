@@ -378,6 +378,7 @@ main {
     color: rgb(104, 102, 102);
     text-align: center;
     line-height: 25px;
+    font-size: 0.9375rem;
   }
   &__copyright-logos {
     display: flex;
@@ -427,7 +428,7 @@ main {
 
 /*** Category Page (ie. HEADPHONERS, SPEAKERS, EARPHONES ***/
 
-.category-page {
+.category {
   &__heading {
     padding-top: 1.5rem;
     font-size: 1.75rem;
@@ -438,6 +439,8 @@ main {
     color: white;
     letter-spacing: 2px;
   }
+}
+.category-page {
   &__cards {
     margin: 1.5rem 1.5rem 5rem;
     display: flex;
@@ -798,7 +801,7 @@ main {
   }
 }
 
-.summary {
+.checkout__summary {
   padding: 2rem 1.5rem;
   background-color: #fff;
   margin: 2rem 0 6rem;
@@ -989,42 +992,45 @@ Tablet
     }
   }
 
-  .category-page {
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
+  .category {
     &__heading {
       font-size: 2.5rem;
       padding: 105px 0 97px;
     }
   }
-  .category-page__cards {
-    margin: 7.5rem 0 0;
-  }
-  .category-page-card {
-    &__picture {
-      width: 100%;
+
+  .category-page {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    &__cards {
+      margin: 7.5rem 0 0;
     }
-    &__img {
-      width: 100%;
-      height: auto;
-      margin-bottom: 3.25rem;
-    }
-    .new-product--orange {
-      margin-bottom: 1rem;
-    }
-    &__name {
-      font-size: 2.5rem;
-      line-height: 44px;
-      max-width: 300px;
-      text-align: center;
-      padding-top: 0;
-    }
-    &__desc {
-      max-width: 565px;
+    .category-page-card {
+      &__picture {
+        width: 100%;
+      }
+      &__img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 3.25rem;
+      }
+      .new-product--orange {
+        margin-bottom: 1rem;
+      }
+      &__name {
+        font-size: 2.5rem;
+        line-height: 44px;
+        max-width: 300px;
+        text-align: center;
+        padding-top: 0;
+      }
+      &__desc {
+        max-width: 565px;
+      }
     }
   }
 
-  .category-section {
+  .category-page .category-section {
     padding-top: 10.75rem;
   }
 
@@ -1045,10 +1051,8 @@ Tablet
     &__main-flex {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 4.375rem;
-    }
-    &__picture {
-      width: 100%;
     }
     &__subheading {
       text-align: left;
@@ -1085,6 +1089,20 @@ Tablet
     right: 2.5rem;
     margin-left: auto;
   }
+
+  .checkout__main {
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1rem;
+    }
+    &__address {
+      grid-column: 1 / 3;
+    }
+    &__cash-on-d {
+      grid-column: 2 / 3;
+    }
+  }
 }
 
 /*
@@ -1093,7 +1111,7 @@ Desktop
 ******************************************
 */
 
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .header {
     background-color: #191919;
     padding: 0 10.3125rem;
@@ -1180,11 +1198,11 @@ Desktop
     }
   }
   .about {
+    margin: 10rem 0;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     grid-template-columns: 1fr 1fr;
-    margin: 200px 10.3125rem;
     &__img {
       background-image: url(/public/assets/shared/desktop/image-best-gear.jpg);
       height: 588px;
@@ -1211,6 +1229,18 @@ Desktop
     padding-bottom: 3rem;
     &__orange-line {
       left: 10.3125rem;
+    }
+    &__logo-nav-flex {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding-bottom: 2.25rem;
+    }
+    .nav {
+      padding: 0;
+    }
+    &__p {
+      max-width: 540px;
     }
   }
 
@@ -1244,6 +1274,11 @@ Desktop
 
   .product-detail {
     padding: 5rem 10.3125rem 0;
+    max-width: 1500px;
+    margin: 0 auto;
+    &__main-flex {
+      gap: 7.75rem;
+    }
     &__product-img {
       margin-top: 3.5rem;
     }
@@ -1257,15 +1292,35 @@ Desktop
     &__in-the-box {
       flex-basis: 145%;
     }
+    &__images-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     &__images {
       margin-top: 10rem;
     }
     &__others {
-      margin-top: 10rem;
+      margin: 10rem;
     }
   }
 
   .cart {
     right: 10.3125rem;
+  }
+
+  .checkout {
+    padding: 5rem 10.3125rem 8.75rem;
+    &__grid {
+      display: grid;
+      grid-template-columns: 2.1fr 1fr;
+      gap: 30px;
+    }
+    &__main {
+      grid-row-start: 1;
+    }
+    &__summary {
+      align-self: flex-start;
+    }
   }
 }

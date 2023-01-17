@@ -12,8 +12,8 @@ const CategoryPage = ({ productData, category }) => {
     });
 
   return (
-    <section>
-      <h2 className="category-page__heading">{category}</h2>
+    <section className="category">
+      <h2 className="category__heading">{category}</h2>
       <main className="category-page">
         <ul className="category-page__cards">
           {products.map((product) => (

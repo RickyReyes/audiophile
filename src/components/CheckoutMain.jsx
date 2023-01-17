@@ -5,60 +5,74 @@ const CheckoutMain = () => {
     <section className="checkout__main">
       <h1 className="checkout__main__heading">Checkout</h1>
       <h2 className="checkout__main__subheading">Billing Details</h2>
-      <form action="#">
-        <label className="checkout__main__label">Name</label>
-        <input
-          className="checkout__main__input"
-          type="text"
-          placeholder="Alexei Ward"
-        />
+      <form className="checkout__main__grid" action="#">
+        <div>
+          <label className="checkout__main__label">Name</label>
+          <input
+            className="checkout__main__input"
+            type="text"
+            placeholder="Alexei Ward"
+          />
+        </div>
 
-        <label className="checkout__main__label">Email Address</label>
-        <input
-          className="checkout__main__input"
-          type="email"
-          placeholder="alexei@gmail.com"
-        />
+        <div>
+          <label className="checkout__main__label">Email Address</label>
+          <input
+            className="checkout__main__input"
+            type="email"
+            placeholder="alexei@gmail.com"
+          />
+        </div>
 
-        <label className="checkout__main__label">Phone Number</label>
-        <input
-          className="checkout__main__input"
-          type="phone"
-          placeholder="+1 202-555-0136"
-        />
+        <div>
+          <label className="checkout__main__label">Phone Number</label>
+          <input
+            className="checkout__main__input"
+            type="phone"
+            placeholder="+1 202-555-0136"
+          />
+        </div>
       </form>
       <h2 className="checkout__main__subheading">Shipping Info</h2>
-      <form action="#">
-        <label className="checkout__main__label">Your Address</label>
-        <input
-          className="checkout__main__input"
-          type="text"
-          placeholder="1137 Williams Avenue"
-        />
+      <form action="#" className="checkout__main__grid">
+        <div className="checkout__main__address">
+          <label className="checkout__main__label">Your Address</label>
+          <input
+            className="checkout__main__input"
+            type="text"
+            placeholder="1137 Williams Avenue"
+          />
+        </div>
 
-        <label className="checkout__main__label">Zip Code</label>
-        <input
-          className="checkout__main__input"
-          type="text"
-          placeholder="10001"
-        />
+        <div>
+          <label className="checkout__main__label">Zip Code</label>
+          <input
+            className="checkout__main__input"
+            type="text"
+            placeholder="10001"
+          />
+        </div>
 
-        <label className="checkout__main__label">City</label>
-        <input
-          className="checkout__main__input"
-          type="text"
-          placeholder="New York"
-        />
+        <div>
+          <label className="checkout__main__label">City</label>
+          <input
+            className="checkout__main__input"
+            type="text"
+            placeholder="New York"
+          />
+        </div>
 
-        <label className="checkout__main__label">Country</label>
-        <input
-          className="checkout__main__input"
-          type="text"
-          placeholder="United States"
-        />
+        <div>
+          <label className="checkout__main__label">Country</label>
+          <input
+            className="checkout__main__input"
+            type="text"
+            placeholder="United States"
+          />
+        </div>
       </form>
       <h2 className="checkout__main__subheading">Payment Details</h2>
-      <form action="#">
+      <form action="#" className="checkout__main__grid">
         <label className="checkout__main__label">Payment Method</label>
         <div className="checkout__main__radio-container">
           <label className="checkout__main__radio-label" for="e-money">
@@ -74,7 +88,7 @@ const CheckoutMain = () => {
           />
           <span></span>
         </div>
-        <div className="checkout__main__radio-container">
+        <div className="checkout__main__radio-container checkout__main__cash-on-d">
           <label className="checkout__main__radio-label" for="cash-on-delivery">
             Cash on Delivery
           </label>
@@ -87,18 +101,22 @@ const CheckoutMain = () => {
           />
           <span></span>
         </div>
-        <label className="checkout__main__label">e-Money Number</label>
-        <input
-          className="checkout__main__input"
-          type="text"
-          placeholder="238521993"
-        />
-        <label className="checkout__main__label">e-Money PIN</label>
-        <input
-          className="checkout__main__input"
-          type="text"
-          placeholder="6891"
-        />
+        <div>
+          <label className="checkout__main__label">e-Money Number</label>
+          <input
+            className="checkout__main__input"
+            type="text"
+            placeholder="238521993"
+          />
+        </div>
+        <div>
+          <label className="checkout__main__label">e-Money PIN</label>
+          <input
+            className="checkout__main__input"
+            type="text"
+            placeholder="6891"
+          />
+        </div>
       </form>
     </section>
   );

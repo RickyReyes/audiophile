@@ -12,8 +12,10 @@ const CheckoutPage = () => {
       <p className="go-back" onClick={() => navigate(-1)}>
         Go Back
       </p>
-      <CheckoutMain />
-      <CheckoutSummary />
+      <div className="checkout__grid">
+        <CheckoutMain />
+        <CheckoutSummary />
+      </div>
     </main>
   );
 };

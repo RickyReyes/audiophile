@@ -6,23 +6,23 @@ const CheckoutSummary = () => {
   const SHIPPING_COST = 50;
   const VAT_FEE = 1079;
   return (
-    <section className="summary">
-      <h2 className="summary__heading">Summary</h2>
-      <ul className="summary__cart-ul">
+    <section className="checkout__summary">
+      <h2 className="checkout__summary__heading">Summary</h2>
+      <ul className="checkout__summary__cart-ul">
         {cart.map((cartItem) => {
           return (
-            <li className="summary__li">
+            <li className="checkout__summary__li">
               <img
-                className="summary__img"
+                className="checkout__summary__img"
                 src={cartItem.product.image.mobile.substring(1)}
                 alt={cartItem.product.name}
               />
-              <div className="summary__info-flex">
-                <div className="summary__name-quantity-flex">
+              <div className="checkout__summary__info-flex">
+                <div className="checkout__summary__name-quantity-flex">
                   <strong>{cartItem.product.shortName}</strong>
                   <div className="summary__quantity">x{cartItem.quantity}</div>
                 </div>
-                <div className="cart__price">
+                <div className="checkout__cart__price">
                   $ {cartItem.product.price.toLocaleString("en-US")}
                 </div>
               </div>
@@ -30,7 +30,7 @@ const CheckoutSummary = () => {
           );
         })}
       </ul>
-      <ul className="summary__review-ul">
+      <ul className="checkout__summary__review-ul">
         <li className="total-flex">
           <div className="total-flex__item">Total</div>
           <strong>$ {totalAmountDue.toLocaleString("en-US")}</strong>

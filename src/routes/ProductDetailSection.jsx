@@ -97,44 +97,46 @@ const ProductDetailSection = ({ product }) => {
           </ul>
         </div>
       </div>
-      <ul className="product-detail__images">
-        <li>
-          <picture>
-            <source
-              media="(min-width: 750px)"
-              srcSet={product.gallery.first.tablet.substring(1)}
-            ></source>
-            <img
-              src={product.gallery.first.mobile.substring(1)}
-              alt={`${product.name} showcase`}
-            />
-          </picture>
-        </li>
-        <li>
-          <picture>
-            <source
-              media="(min-width: 750px)"
-              srcSet={product.gallery.second.tablet.substring(1)}
-            ></source>
-            <img
-              src={product.gallery.second.mobile.substring(1)}
-              alt={`${product.name} showcase`}
-            />
-          </picture>
-        </li>
-        <li className="product-detail__images--third">
-          <picture>
-            <source
-              media="(min-width: 750px)"
-              srcSet={product.gallery.third.tablet.substring(1)}
-            ></source>
-            <img
-              src={product.gallery.third.mobile.substring(1)}
-              alt={`${product.name} showcase`}
-            />
-          </picture>
-        </li>
-      </ul>
+      <div className="product-detail__images-container">
+        <ul className="product-detail__images">
+          <li>
+            <picture>
+              <source
+                media="(min-width: 750px)"
+                srcSet={product.gallery.first.tablet.substring(1)}
+              ></source>
+              <img
+                src={product.gallery.first.mobile.substring(1)}
+                alt={`${product.name} showcase`}
+              />
+            </picture>
+          </li>
+          <li>
+            <picture>
+              <source
+                media="(min-width: 750px)"
+                srcSet={product.gallery.second.tablet.substring(1)}
+              ></source>
+              <img
+                src={product.gallery.second.mobile.substring(1)}
+                alt={`${product.name} showcase`}
+              />
+            </picture>
+          </li>
+          <li className="product-detail__images--third">
+            <picture>
+              <source
+                media="(min-width: 750px)"
+                srcSet={product.gallery.third.tablet.substring(1)}
+              ></source>
+              <img
+                src={product.gallery.third.mobile.substring(1)}
+                alt={`${product.name} showcase`}
+              />
+            </picture>
+          </li>
+        </ul>
+      </div>
       <section className="product-detail__others">
         <h4 className="product-detail__subheading center">You may also like</h4>
         <ul className="product-detail__others-ul">
