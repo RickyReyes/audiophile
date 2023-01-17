@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       <Header setShowMobileMenu={setShowMobileMenu} setShowCart={setShowCart} />
       {showMobileMenu && <CategorySection mobileMenu={true} />}
-      {showCart && <Cart cart={cart} setCart={setCart} />}
+      {showCart && <Cart />}
       <Routes>
         <Route path="/" element={<Home productData={productData} />} />
         <Route path="/checkout" element={<CheckoutPage />} />
@@ -61,9 +61,6 @@ function App() {
               <ProductDetailSection
                 product={product}
                 productData={productData}
-                cart={cart}
-                setCart={setCart}
-                handleAddToCart={handleAddToCart}
               />
             }
           />

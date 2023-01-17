@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import CategorySection from "../components/CategorySection";
 import About from "../components/About";
+import { CartContext } from "../cartContext";
 
-const ProductDetailSection = ({ handleAddToCart, product }) => {
+const ProductDetailSection = ({ product }) => {
   const navigate = useNavigate();
   const pathname = useLocation();
   useEffect(() => {
@@ -11,7 +12,7 @@ const ProductDetailSection = ({ handleAddToCart, product }) => {
   }, [pathname]);
 
   const [amountToAdd, setAmountToAdd] = useState(1);
-
+  const { handleAddToCart } = useContext(CartContext);
   return (
     <section className="product-detail">
       <p className="product-detail__go-back" onClick={() => navigate(-1)}>

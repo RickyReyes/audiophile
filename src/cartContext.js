@@ -40,6 +40,10 @@ function CartContextProvider(props) {
     );
   }
 
+  let totalAmountDue = cart.reduce((total, cartItem) => {
+    return total + cartItem?.product.price * cartItem.quantity;
+  }, 0);
+
   return (
     <CartContext.Provider
       value={{
@@ -49,6 +53,7 @@ function CartContextProvider(props) {
         setShowCart,
         handleAddToCart,
         handleQuantityChange,
+        totalAmountDue,
       }}
     >
       {props.children}

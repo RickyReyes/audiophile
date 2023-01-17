@@ -4,12 +4,9 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../cartContext";
 
-const Cart = ({ cart, setCart }) => {
-  let totalAmountDue = cart.reduce((total, cartItem) => {
-    return total + cartItem?.product.price * cartItem.quantity;
-  }, 0);
-
-  const { setShowCart } = useContext(CartContext);
+const Cart = () => {
+  const { cart, setCart, setShowCart, totalAmountDue } =
+    useContext(CartContext);
 
   return (
     <section className="cart">
@@ -31,7 +28,7 @@ const Cart = ({ cart, setCart }) => {
       ) : (
         <div className="cart__main">
           <ul className="cart__rows">
-            {cart.map(({ product, quantity }) => (
+            {cart.map(({ product }) => (
               <li key={product.id} className="cart__row">
                 <img
                   className="cart__img"
@@ -39,7 +36,7 @@ const Cart = ({ cart, setCart }) => {
                   alt={product.name}
                 />
                 <div className="cart__name-and-price">
-                  <strong>{product.name.split(" ")[0]}</strong>
+                  <strong>{product.shortName}</strong>
                   <p className="cart__price">
                     $ {product.price.toLocaleString("en-US")}
                   </p>
@@ -48,8 +45,8 @@ const Cart = ({ cart, setCart }) => {
               </li>
             ))}
           </ul>
-          <div className="cart__total-flex">
-            <div className="cart__total-word">Total</div>
+          <div className="total-flex">
+            <div className="total-flex__item">Total</div>
             <strong>$ {totalAmountDue}</strong>
           </div>
           <Link to="/checkout">
