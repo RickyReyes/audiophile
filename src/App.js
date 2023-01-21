@@ -9,6 +9,7 @@ import Cart from "./components/Cart";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import CategorySection from "./components/CategorySection";
+import ConfirmationModal from "./components/ConfirmationModal";
 
 import Home from "./routes/Home";
 import CategoryPage from "./routes/CategoryPage";
@@ -33,13 +34,20 @@ function App() {
 
   const [productData] = useState(data);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const { cart, setCart, showCart, setShowCart, handleAddToCart } =
-    useContext(CartContext);
+  const {
+    cart,
+    setCart,
+    showCart,
+    setShowCart,
+    handleAddToCart,
+    showConfirmationModal,
+  } = useContext(CartContext);
 
   return (
     <div className="App">
       <Header setShowMobileMenu={setShowMobileMenu} setShowCart={setShowCart} />
       {showMobileMenu && <CategorySection mobileMenu={true} />}
+      {showConfirmationModal && <ConfirmationModal />}
       {showCart && <Cart />}
       <Routes>
         <Route path="/" element={<Home productData={productData} />} />

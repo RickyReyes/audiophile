@@ -9,6 +9,20 @@ $Very-Light-Gray: #fafafa;
 $Gray: #979797;
 $Dark-Gray: #4c4c4c;
 
+@mixin modal {
+  z-index: 1;
+  position: fixed;
+  left: 50%;
+  top: calc(90px + 1.5rem);
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 2rem 1.75rem;
+  border-radius: 8px;
+  width: calc(100% - 3rem);
+  max-width: 377px;
+  box-shadow: 0px 300px 10px 10000px rgba(0, 0, 0, 0.5);
+}
+
 @mixin btn {
   display: block;
   border: 0;
@@ -582,7 +596,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
-    padding: 2.5rem 0 5rem;
+    padding: 2.5rem 0 0;
   }
   &__other {
     display: flex;
@@ -616,17 +630,7 @@ main {
 }
 
 .cart {
-  z-index: 1;
-  position: fixed;
-  left: 50%;
-  top: calc(90px + 1.5rem);
-  transform: translateX(-50%);
-  background-color: white;
-  padding: 2rem 1.75rem;
-  border-radius: 8px;
-  width: calc(100% - 3rem);
-  max-width: 377px;
-  box-shadow: 0px 300px 10px 10000px rgba(0, 0, 0, 0.5);
+  @include modal;
   &__header {
     display: flex;
     align-items: center;
@@ -863,6 +867,10 @@ main {
   }
 }
 
+.conf-modal {
+  @include modal;
+}
+
 /*
 ******************************************
 Tablet
@@ -903,6 +911,8 @@ Tablet
 
   .category-section {
     padding: 9.25rem 0 0;
+    margin-left: 0;
+    margin-right: 0;
     &__cards {
       gap: 0.6125rem;
       flex-direction: row;
@@ -948,8 +958,8 @@ Tablet
   }
 
   .about {
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
+    margin-left: 0;
+    margin-right: 0;
     gap: 4rem;
     &__img {
       background-image: url(/public/assets/shared/tablet/image-best-gear.jpg);
@@ -1005,32 +1015,32 @@ Tablet
     &__cards {
       margin: 7.5rem 0 0;
     }
-    .category-page-card {
-      &__picture {
-        width: 100%;
-      }
-      &__img {
-        width: 100%;
-        height: auto;
-        margin-bottom: 3.25rem;
-      }
-      .new-product--orange {
-        margin-bottom: 1rem;
-      }
-      &__name {
-        font-size: 2.5rem;
-        line-height: 44px;
-        max-width: 300px;
-        text-align: center;
-        padding-top: 0;
-      }
-      &__desc {
-        max-width: 565px;
-      }
+  }
+  .category-page-card {
+    &__picture {
+      width: 100%;
+    }
+    &__img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 3.25rem;
+    }
+    .new-product--orange {
+      margin-bottom: 1rem;
+    }
+    &__name {
+      font-size: 2.5rem;
+      line-height: 44px;
+      max-width: 300px;
+      text-align: center;
+      padding-top: 0;
+    }
+    &__desc {
+      max-width: 565px;
     }
   }
 
-  .category-page .category-section {
+  .category-section {
     padding-top: 10.75rem;
   }
 
@@ -1127,6 +1137,11 @@ Desktop
     }
   }
 
+  .home {
+    margin-left: 10.3125rem;
+    margin-right: 10.3125rem;
+  }
+
   .hero {
     background-image: url("/public/assets/home/desktop/image-hero.jpg");
     align-items: flex-start;
@@ -1139,13 +1154,11 @@ Desktop
     }
   }
 
-  .home {
-    margin-left: 10.3125rem;
-    margin-right: 10.3125rem;
-  }
-
   .category-section {
-    margin: 0;
+    padding-top: 15rem;
+    &__cards {
+      gap: 1.875rem;
+    }
   }
 
   .product-highlights > * {
@@ -1301,7 +1314,10 @@ Desktop
       margin-top: 10rem;
     }
     &__others {
-      margin: 10rem;
+      margin: 10rem 0 0;
+    }
+    &__others-ul {
+      gap: 1.875rem;
     }
   }
 

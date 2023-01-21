@@ -2,8 +2,9 @@ import { React, createContext, useState } from "react";
 const CartContext = createContext();
 
 function CartContextProvider(props) {
-  const [showCart, setShowCart] = useState(false);
   const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
   function handleAddToCart(productObj, quantity) {
     setShowCart(true);
@@ -54,6 +55,8 @@ function CartContextProvider(props) {
         handleAddToCart,
         handleQuantityChange,
         totalAmountDue,
+        showConfirmationModal,
+        setShowConfirmationModal,
       }}
     >
       {props.children}

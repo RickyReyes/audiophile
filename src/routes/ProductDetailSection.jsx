@@ -7,6 +7,7 @@ import { CartContext } from "../cartContext";
 const ProductDetailSection = ({ product }) => {
   const navigate = useNavigate();
   const pathname = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -144,6 +145,10 @@ const ProductDetailSection = ({ product }) => {
             return (
               <li key={otherObj.name} className="product-detail__other">
                 <picture>
+                  <source
+                    media="(min-width: 1200px)"
+                    srcSet={otherObj.image.desktop.substring(1)}
+                  ></source>
                   <source
                     media="(min-width: 750px)"
                     srcSet={otherObj.image.tablet.substring(1)}
