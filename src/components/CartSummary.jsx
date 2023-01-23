@@ -1,8 +1,12 @@
 import React from "react";
 
-const CartSummary = ({ cart }) => {
+const CartSummary = ({ cart, confirmationModal }) => {
   return (
-    <ul className="checkout__summary__cart-ul">
+    <ul
+      className={`checkout__summary__cart-ul ${
+        confirmationModal && "confirmation"
+      }`}
+    >
       {cart.map((cartItem) => {
         return (
           <li className="checkout__summary__li">

@@ -4,10 +4,14 @@ import CartSummary from "./CartSummary";
 import { CartContext } from "../cartContext";
 
 const CheckoutSummary = () => {
-  const { cart, totalAmountDue, setShowConfirmationModal } =
+  const { cart, setCart, totalAmountDue, setShowConfirmationModal } =
     useContext(CartContext);
   const SHIPPING_COST = 50;
   const VAT_FEE = 1079;
+
+  function handlePay() {
+    setShowConfirmationModal(true);
+  }
   return (
     <section className="checkout__summary">
       <h2 className="checkout__summary__heading">Summary</h2>
@@ -32,10 +36,7 @@ const CheckoutSummary = () => {
           </strong>
         </li>
       </ul>
-      <button
-        className="btn btn--orange"
-        onClick={() => setShowConfirmationModal(true)}
-      >
+      <button className="btn btn--orange" onClick={() => handlePay(true)}>
         Continue & Pay
       </button>
     </section>
