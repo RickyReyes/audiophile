@@ -1,6 +1,8 @@
-import React from "react";
+import { computeHeadingLevel } from "@testing-library/react";
+import React, { useState, useEffect, useRef } from "react";
 
 const CheckoutMain = () => {
+  const cashOnDeliveryRef = useRef(null);
   return (
     <section className="checkout__main">
       <h1 className="checkout__main__heading">Checkout</h1>
@@ -75,7 +77,7 @@ const CheckoutMain = () => {
       <form action="#" className="checkout__main__grid">
         <label className="checkout__main__label">Payment Method</label>
         <div className="checkout__main__radio-container">
-          <label className="checkout__main__radio-label" for="e-money">
+          <label className="checkout__main__radio-label" htmlFor="e-money">
             e-Money
           </label>
           <input
@@ -84,12 +86,15 @@ const CheckoutMain = () => {
             id="e-money"
             name="payment-method"
             placeholder="e-Money"
-            checked
+            defaultChecked
           />
           <span></span>
         </div>
         <div className="checkout__main__radio-container checkout__main__cash-on-d">
-          <label className="checkout__main__radio-label" for="cash-on-delivery">
+          <label
+            className="checkout__main__radio-label"
+            htmlFor="cash-on-delivery"
+          >
             Cash on Delivery
           </label>
           <input
@@ -98,25 +103,34 @@ const CheckoutMain = () => {
             name="payment-method"
             id="cash-on-delivery"
             placeholder="1137 Williams Avenue"
+            ref={cashOnDeliveryRef}
           />
           <span></span>
         </div>
-        <div>
-          <label className="checkout__main__label">e-Money Number</label>
-          <input
-            className="checkout__main__input"
-            type="text"
-            placeholder="238521993"
-          />
-        </div>
-        <div>
-          <label className="checkout__main__label">e-Money PIN</label>
-          <input
-            className="checkout__main__input"
-            type="text"
-            placeholder="6891"
-          />
-        </div>
+        {cashOnDeliveryRef ? (
+          <section>
+            <img src="../assets/checkout/icon-order-confirmation.svg" alt="" />
+          </section>
+        ) : (
+          <>
+            <div>
+              <label className="checkout__main__label">e-Money Number</label>
+              <input
+                className="checkout__main__input"
+                type="text"
+                placeholder="238521993"
+              />
+            </div>
+            <div>
+              <label className="checkout__main__label">e-Money PIN</label>
+              <input
+                className="checkout__main__input"
+                type="text"
+                placeholder="6891"
+              />
+            </div>
+          </>
+        )}
       </form>
     </section>
   );
