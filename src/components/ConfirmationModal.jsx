@@ -10,7 +10,8 @@ const ConfirmationModal = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const { cart, setCart, setShowConfirmationModal } = useContext(CartContext);
+  const { cart, setCart, setShowConfirmationModal, totalAmountDue } =
+    useContext(CartContext);
 
   function handleBackToHome() {
     setShowConfirmationModal(false);
@@ -19,11 +20,18 @@ const ConfirmationModal = () => {
 
   return (
     <div className="conf-modal">
-      <h2 className="conf-modal__heading">Thank You For Your Order</h2>
+      <img
+        src="../assets/checkout/icon-order-confirmation.svg"
+        alt="Confirmation icon"
+      />
+      <h2 className="conf-modal__heading">
+        Thank You
+        <br />
+        For Your Order
+      </h2>
       <p className="conf-modal__p">
         You will receive an email confirmation shortly.
       </p>
-
       <section className="conf-modal__flex">
         <div className="conf-modal__flex--light">
           <CartSummary cart={cart.slice(0, 1)} confirmationModal={true} />
@@ -35,11 +43,15 @@ const ConfirmationModal = () => {
         </div>
         <div className="conf-modal__flex--dark">
           <p className="conf-modal__total-heading">Grand Total</p>
-          <p className="conf-modal__total">$ 5,446</p>
+          <p className="conf-modal__total">
+            $ {totalAmountDue.toLocaleString("en-US")}
+          </p>
         </div>
       </section>
       <Link to="/">
-        <button onClick={handleBackToHome}>Back To Home</button>
+        <button className="btn--orange" onClick={handleBackToHome}>
+          Back To Home
+        </button>
       </Link>
     </div>
   );

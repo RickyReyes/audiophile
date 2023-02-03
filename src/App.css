@@ -256,11 +256,11 @@ main {
 }
 
 .product-highlight-a {
+  margin: 0 1.5rem;
   background-color: #d87d4a;
   color: white;
   padding: 55px 1.5rem;
   border-radius: 8px;
-  margin: 0 1.5rem;
 }
 .product-highlight-a__img {
   background-image: url(/public/assets/home/mobile/image-speaker-zx9.png);
@@ -599,7 +599,7 @@ main {
 }
 
 .cart {
-  z-index: 1;
+  z-index: 3;
   position: fixed;
   left: 50%;
   top: calc(90px + 1.5rem);
@@ -844,7 +844,7 @@ main {
 }
 
 .conf-modal {
-  z-index: 1;
+  z-index: 3;
   position: fixed;
   left: 50%;
   top: calc(90px + 1.5rem);
@@ -856,6 +856,11 @@ main {
   max-width: 377px;
   box-shadow: 0px 300px 10px 10000px rgba(0, 0, 0, 0.5);
 }
+.conf-modal__heading {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 28px;
+}
 .conf-modal__p {
   color: #4c4c4c;
   padding-top: 1rem;
@@ -864,6 +869,8 @@ main {
 }
 .conf-modal__flex {
   margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 .conf-modal__flex--light {
   background-color: #f1f1f1;
@@ -877,10 +884,15 @@ main {
   padding-top: 0.75rem;
   font-weight: 600;
   color: #4c4c4c;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 .conf-modal .checkout__summary__cart-ul {
   padding-top: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.conf-modal .summary__quantity,
+.conf-modal .checkout__cart__price {
+  color: #4c4c4c;
+  font-weight: 600;
 }
 .conf-modal__flex--dark {
   border-bottom-left-radius: 8px;
@@ -895,9 +907,13 @@ main {
 }
 .conf-modal__total {
   color: white;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.125rem;
   padding-top: 0.5rem;
+}
+.conf-modal .btn--orange {
+  margin-top: 1.5rem;
+  width: 100%;
 }
 
 /*
@@ -948,6 +964,11 @@ Tablet
   }
   .product-highlights {
     gap: 2rem;
+  }
+  .product-highlight-a,
+.product-highlight-b,
+.product-highlight-c {
+    margin: 0;
   }
   .product-highlight-a__name {
     font-size: 3.5rem;
@@ -1105,6 +1126,35 @@ Tablet
   }
   .checkout__main__cash-on-d {
     grid-column: 2/3;
+  }
+  .conf-modal {
+    max-width: 540px;
+  }
+  .conf-modal__heading {
+    margin-top: 2rem;
+    font-size: 2rem;
+    line-height: 36px;
+  }
+  .conf-modal__flex {
+    flex-direction: row;
+    width: 100%;
+  }
+  .conf-modal__flex--light {
+    border-radius: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  .conf-modal .summary__quantity {
+    margin-left: 2.625rem;
+  }
+  .conf-modal__flex--dark {
+    border-radius: 0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 /*

@@ -10,7 +10,7 @@ $Gray: #979797;
 $Dark-Gray: #4c4c4c;
 
 @mixin modal {
-  z-index: 1;
+  z-index: 3;
   position: fixed;
   left: 50%;
   top: calc(90px + 1.5rem);
@@ -269,11 +269,11 @@ main {
 }
 
 .product-highlight-a {
+  margin: 0 1.5rem;
   background-color: $Orange;
   color: white;
   padding: 55px 1.5rem;
   border-radius: 8px;
-  margin: 0 1.5rem;
   &__img {
     background-image: url(/public/assets/home/mobile/image-speaker-zx9.png);
     width: 197.21px;
@@ -869,6 +869,11 @@ main {
 
 .conf-modal {
   @include modal;
+  &__heading {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 28px;
+  }
   &__p {
     color: $Dark-Gray;
     padding-top: 1rem;
@@ -877,6 +882,8 @@ main {
   }
   &__flex {
     margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
   }
 
   &__flex--light {
@@ -890,12 +897,18 @@ main {
       padding-top: 0.75rem;
       font-weight: 600;
       color: $Dark-Gray;
+      border-top: 1px solid rgba(black, 0.08);
     }
   }
 
   .checkout__summary__cart-ul {
     padding-top: 0;
-    border-bottom: 1px solid rgba(black, 0.08);
+  }
+
+  .summary__quantity,
+  .checkout__cart__price {
+    color: $Dark-Gray;
+    font-weight: 600;
   }
 
   &__flex--dark {
@@ -911,9 +924,14 @@ main {
   }
   &__total {
     color: white;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.125rem;
     padding-top: 0.5rem;
+  }
+
+  .btn--orange {
+    margin-top: 1.5rem;
+    width: 100%;
   }
 }
 
@@ -971,6 +989,12 @@ Tablet
 
   .product-highlights {
     gap: 2rem;
+  }
+
+  .product-highlight-a,
+  .product-highlight-b,
+  .product-highlight-c {
+    margin: 0;
   }
 
   .product-highlight-a {
@@ -1157,6 +1181,36 @@ Tablet
     }
     &__cash-on-d {
       grid-column: 2 / 3;
+    }
+  }
+
+  .conf-modal {
+    max-width: 540px;
+    &__heading {
+      margin-top: 2rem;
+      font-size: 2rem;
+      line-height: 36px;
+    }
+    &__flex {
+      flex-direction: row;
+      width: 100%;
+    }
+    &__flex--light {
+      border-radius: 0;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+    }
+    .summary__quantity {
+      margin-left: 2.625rem;
+    }
+    &__flex--dark {
+      border-radius: 0;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   }
 }
