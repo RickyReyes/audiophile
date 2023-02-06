@@ -205,12 +205,15 @@ main {
     width: 100%;
     gap: 4.25rem;
   }
-  &.mobile {
-    position: fixed;
-    box-shadow: 0px 500px 10px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1;
+
+  &.mobile-menu {
+    position: sticky;
+    top: 0;
+    z-index: 4;
     border-radius: 0px 0px 8px 8px;
     width: 100%;
+    height: 750px;
+    overflow: auto;
     margin: 0;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -272,12 +275,46 @@ main {
   margin: 0 1.5rem;
   background-color: $Orange;
   color: white;
-  padding: 55px 1.5rem;
+  padding: 294px 1.5rem 55px;
   border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  &__middle-ring {
+    border: 1px solid rgba(white, 0.2);
+    border-radius: 50%;
+    width: 320px;
+    height: 320px;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    place-items: center;
+  }
+  &__middle-ring::before {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(white, 0.2);
+    border-radius: 50%;
+    width: 280px;
+    height: 280px;
+    display: grid;
+    place-items: center;
+  }
+  // outer ring
+  &__middle-ring::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(white, 0.2);
+    border-radius: 50%;
+    width: 558px;
+    height: 558px;
+  }
   &__img {
     background-image: url(/public/assets/home/mobile/image-speaker-zx9.png);
-    width: 197.21px;
-    height: 237px;
+    width: 172.25px;
+    height: 207px;
     background-size: cover;
     margin: 0 auto;
   }
@@ -287,7 +324,6 @@ main {
     align-items: center;
   }
   &__name {
-    padding-top: 2rem;
     line-height: 40px;
     font-size: 2.25rem;
     text-align: center;
@@ -731,6 +767,11 @@ main {
     display: block;
     padding-top: 1rem;
     font-weight: 700;
+    cursor: pointer;
+    &.email {
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &__radio-label {
     padding-left: 21px;
@@ -740,9 +781,38 @@ main {
     border-radius: 8px;
     padding: 1.125rem 1.5rem;
     font-size: 0.875rem;
+    box-shadow: none;
+    cursor: pointer;
+    @media (hover: hover) {
+      &:hover {
+        border: 1px solid $Orange;
+      }
+    }
     &:focus {
       outline: 0;
+      border: 1px solid $Orange;
     }
+
+    &.email:invalid {
+      outline: none;
+      border: 0;
+      box-shadow: 0;
+      border: 2px solid #cd2c2c;
+    }
+  }
+
+  fieldset {
+    border: 0;
+  }
+  fieldset:invalid label {
+    color: #cd2c2c;
+  }
+  .wrong-format {
+    color: #cd2c2c;
+    display: none;
+  }
+  fieldset:invalid .wrong-format {
+    display: block;
   }
   &__input:not(.checkout__main__input--radio) {
     margin-top: 9px;
@@ -760,6 +830,12 @@ main {
     font-size: 13px;
     padding: 1.125rem 1.5rem;
     position: relative;
+    cursor: pointer;
+    @media (hover: hover) {
+      &:hover {
+        border: 1px solid $Orange;
+      }
+    }
     &:last-of-type {
       margin: 1rem 0;
     }
@@ -802,6 +878,19 @@ main {
   }
   &__input--radio:checked ~ span::after {
     transform: translate(-50%, -50%) scale(1);
+  }
+  .cash-on-d-desc {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: start;
+    &__p {
+      font-weight: 400;
+      font-size: 0.9375rem;
+      color: $Dark-Gray;
+      line-height: 25px;
+    }
   }
 }
 
@@ -981,7 +1070,7 @@ Tablet
       gap: 0.6125rem;
       flex-direction: row;
     }
-    &.mobile {
+    &.mobile-menu {
       padding-top: 6.75rem;
       box-shadow: 0px 300px 10px 10000px rgba(0, 0, 0, 0.5);
     }
@@ -998,12 +1087,32 @@ Tablet
   }
 
   .product-highlight-a {
+    padding-top: 353px;
     &__name {
+      padding-top: 0;
       font-size: 3.5rem;
       line-height: 3.6125rem;
     }
     &__img {
       background-image: url(/public/assets/home/tablet/image-speaker-zx9.png);
+    }
+    &__middle-ring {
+      top: -87px;
+      width: 542px;
+      height: 542px;
+    }
+    &__middle-ring::before {
+      width: 472px;
+      height: 472px;
+    }
+    &__middle-ring::after {
+      width: 944px;
+      height: 944px;
+    }
+    .btn {
+      position: relative;
+      z-index: 2;
+      margin-top: 2.5rem;
     }
   }
 
@@ -1112,6 +1221,9 @@ Tablet
 
   .category-section {
     padding-top: 10.75rem;
+    &.mobile-menu {
+      height: auto;
+    }
   }
 
   .about {
@@ -1182,6 +1294,11 @@ Tablet
     &__cash-on-d {
       grid-column: 2 / 3;
     }
+    .cash-on-d-desc {
+      flex-direction: row;
+      gap: 2rem;
+      align-items: center;
+    }
   }
 
   .conf-modal {
@@ -1221,7 +1338,7 @@ Desktop
 ******************************************
 */
 
-@media (min-width: 1200px) {
+@media (min-width: 1000px) {
   .header {
     background-color: #191919;
     padding: 0 10.3125rem;
@@ -1265,7 +1382,7 @@ Desktop
     margin: 0;
   }
 
-  .category-section.mobile {
+  .category-section.mobile-menu {
     display: none;
   }
 
@@ -1434,6 +1551,11 @@ Desktop
     }
     &__main {
       grid-row-start: 1;
+      padding: 3.375rem 3rem;
+      &__heading {
+        letter-spacing: 1.14286px;
+        font-size: 2rem;
+      }
     }
     &__summary {
       align-self: flex-start;

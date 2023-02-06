@@ -6,7 +6,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import Header from "./components/Header";
 import Cart from "./components/Cart";
-import About from "./components/About";
 import Footer from "./components/Footer";
 import CategorySection from "./components/CategorySection";
 import ConfirmationModal from "./components/ConfirmationModal";
@@ -34,17 +33,12 @@ function App() {
 
   const [productData] = useState(data);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const {
-    cart,
-    setCart,
-    showCart,
-    setShowCart,
-    handleAddToCart,
-    showConfirmationModal,
-  } = useContext(CartContext);
+  const { cartRef, showCart, setShowCart, showConfirmationModal } =
+    useContext(CartContext);
 
+  console.log(showMobileMenu);
   return (
-    <div className="App">
+    <div className={`App ${showMobileMenu ? "mobile-menu" : ""}`}>
       <Header setShowMobileMenu={setShowMobileMenu} setShowCart={setShowCart} />
       {showMobileMenu && <CategorySection mobileMenu={true} />}
       {showConfirmationModal && <ConfirmationModal />}

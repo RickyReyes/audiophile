@@ -9,7 +9,7 @@ const CartSummary = ({ cart, confirmationModal }) => {
     >
       {cart.map((cartItem) => {
         return (
-          <li className="checkout__summary__li">
+          <li key={cartItem} className="checkout__summary__li">
             <img
               className="checkout__summary__img"
               src={cartItem.product.image.mobile.substring(1)}

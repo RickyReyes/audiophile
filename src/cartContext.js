@@ -1,10 +1,16 @@
-import { React, createContext, useState } from "react";
+import { React, createContext, useState, useRef, useEffect } from "react";
 const CartContext = createContext();
 
 function CartContextProvider(props) {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
+  );
   const [showCart, setShowCart] = useState(false);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   function handleAddToCart(productObj, quantity) {
     setShowCart(true);
@@ -45,6 +51,25 @@ function CartContextProvider(props) {
     return total + cartItem?.product.price * cartItem.quantity;
   }, 0);
 
+  let cartRef = useRef(null);
+
+  /* Hide a modal when user clicks outside of it */
+  function useClickOutside(ref, toggleFunc, urlSnippet) {
+    useEffect(() => {
+      let handler = (e) => {
+        if (e.target.src && e.target.src.includes(urlSnippet)) {
+          toggleFunc(true);
+        } else if (ref.current && !ref.current.contains(e.target)) {
+          toggleFunc(false);
+        }
+      };
+      document.addEventListener("mousedown", handler);
+      return () => {
+        document.removeEventListener("mousedown", handler);
+      };
+    }, []);
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -57,6 +82,8 @@ function CartContextProvider(props) {
         totalAmountDue,
         showConfirmationModal,
         setShowConfirmationModal,
+        cartRef,
+        useClickOutside,
       }}
     >
       {props.children}

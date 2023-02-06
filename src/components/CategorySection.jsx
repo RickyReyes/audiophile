@@ -3,9 +3,8 @@ import CategoryCard from "./CategorySectionCard";
 /* This component is used in the flow of all of the pages of this site, as well as the mobile menu, when mobileMenu === true.
  */
 const CategorySection = ({ mobileMenu }) => {
-  console.log(mobileMenu);
   return (
-    <section className={`category-section ${mobileMenu ? "mobile" : ""}`}>
+    <section className={`category-section ${mobileMenu ? "mobile-menu" : ""}`}>
       <ul className="category-section__cards">
         <CategoryCard
           src="/assets/shared/desktop/image-category-thumbnail-headphones.png"

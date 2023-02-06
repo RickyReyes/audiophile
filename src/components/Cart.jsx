@@ -5,11 +5,19 @@ import { useContext } from "react";
 import { CartContext } from "../cartContext";
 
 const Cart = () => {
-  const { cart, setCart, setShowCart, totalAmountDue } =
-    useContext(CartContext);
+  const {
+    cart,
+    setCart,
+    setShowCart,
+    totalAmountDue,
+    cartRef,
+    useClickOutside,
+  } = useContext(CartContext);
+
+  useClickOutside(cartRef, setShowCart, "icon-cart.svg");
 
   return (
-    <section className="cart">
+    <section ref={cartRef} className="cart">
       <div className="cart__header">
         <h1 className="cart__heading">{`CART (${cart.reduce(
           (total, cartItem) => {
