@@ -281,7 +281,7 @@ main {
   overflow: hidden;
   &__middle-ring {
     border: 1px solid rgba(white, 0.2);
-    border-radius: 50%;
+    border-radius: 100%;
     width: 320px;
     height: 320px;
     position: absolute;
@@ -296,7 +296,7 @@ main {
     content: "";
     position: absolute;
     border: 1px solid rgba(white, 0.2);
-    border-radius: 50%;
+    border-radius: 100%;
     width: 280px;
     height: 280px;
     display: grid;
@@ -307,7 +307,7 @@ main {
     content: "";
     position: absolute;
     border: 1px solid rgba(white, 0.2);
-    border-radius: 50%;
+    border-radius: 100%;
     width: 558px;
     height: 558px;
   }
@@ -1338,7 +1338,7 @@ Desktop
 ******************************************
 */
 
-@media (min-width: 1000px) {
+@media (min-width: 1150px) {
   .header {
     background-color: #191919;
     padding: 0 10.3125rem;
@@ -1387,35 +1387,36 @@ Desktop
   }
 
   .product-highlight-a {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: left;
-    align-items: center;
-    justify-content: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    gap: 138px;
+    border: 1px solid blue;
     padding: 0;
-    position: relative;
-    overflow-y: hidden;
+    &__middle-ring {
+      position: absolute;
+      width: 542px;
+      top: 25px;
+      left: 25%;
+      &::after {
+        position: absolute;
+      }
+    }
     &__img {
-      align-self: flex-start;
-      background-image: url(/public/assets/home/desktop/image-speaker-zx9.png);
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: bottom;
-      position: relative;
-      left: 5vw;
-      width: clamp(150px, 25vw, 650px);
-      height: 105%;
+      position: absolute;
+      width: 80%;
+      max-width: 410px;
+      height: 493px;
+      margin: 0;
+      z-index: 3;
     }
     &__content {
       align-items: flex-start;
-      padding: 7.5vw;
+      padding: 133px 95px 124px 666px;
     }
+    &__p,
     &__name {
       text-align: left;
-    }
-    &__p {
-      text-align: left;
-      max-width: unset;
     }
   }
 
