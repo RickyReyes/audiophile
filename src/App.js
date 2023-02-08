@@ -33,10 +33,9 @@ function App() {
 
   const [productData] = useState(data);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const { cartRef, showCart, setShowCart, showConfirmationModal } =
+  const { showCart, setShowCart, showConfirmationModal } =
     useContext(CartContext);
 
-  console.log(showMobileMenu);
   return (
     <div className={`App ${showMobileMenu ? "mobile-menu" : ""}`}>
       <Header setShowMobileMenu={setShowMobileMenu} setShowCart={setShowCart} />
