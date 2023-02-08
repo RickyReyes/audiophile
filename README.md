@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [github.com/RickyReyes/audiophile](https://github.com/RickyReyes/audiophile)
 - Live Site URL: [audiophile-pink.vercel.app](https://audiophile-pink.vercel.app/)
 
 ## My process
