@@ -10,7 +10,7 @@ const CheckoutSummary = () => {
 
   /* from stack overflow */
   function numberWithCommas(x) {
-    return x
+    return parseFloat(x)
       .toFixed(2)
       .toString()
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",");

@@ -128,6 +128,10 @@ main {
 
 .header {
   background-color: #101010;
+  position: sticky;
+  top: 0;
+  height: 90px;
+  z-index: 4;
 }
 
 .header__container {
@@ -205,6 +209,11 @@ main {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-bottom: 2.25rem;
+}
+
+.App.mobile-menu {
+  height: 840px;
+  overflow: hidden;
 }
 
 .category-section-card {
@@ -644,6 +653,7 @@ main {
   width: calc(100% - 3rem);
   max-width: 377px;
   box-shadow: 0px 300px 10px 10000px rgba(0, 0, 0, 0.5);
+  z-index: 5;
 }
 .cart__header {
   display: flex;

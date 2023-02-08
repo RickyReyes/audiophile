@@ -141,6 +141,10 @@ main {
 
 .header {
   background-color: $Almost-Black;
+  position: sticky;
+  top: 0;
+  height: 90px;
+  z-index: 4;
 }
 
 .header__container {
@@ -219,6 +223,11 @@ main {
     padding-right: 1.5rem;
     padding-bottom: 2.25rem;
   }
+}
+
+.App.mobile-menu {
+  height: 840px;
+  overflow: hidden;
 }
 
 .category-section-card {
@@ -667,6 +676,7 @@ main {
 
 .cart {
   @include modal;
+  z-index: 5;
   &__header {
     display: flex;
     align-items: center;
