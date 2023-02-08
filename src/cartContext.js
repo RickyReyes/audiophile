@@ -47,9 +47,13 @@ function CartContextProvider(props) {
     );
   }
 
-  let totalAmountDue = cart.reduce((total, cartItem) => {
-    return total + cartItem?.product.price * cartItem.quantity;
-  }, 0);
+  let totalAmountDue = (
+    Math.round(
+      cart.reduce((total, cartItem) => {
+        return total + cartItem?.product.price * cartItem.quantity;
+      }, 0) * 100
+    ) / 100
+  ).toFixed(2);
 
   let cartRef = useRef(null);
 

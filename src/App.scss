@@ -1391,22 +1391,22 @@ Desktop
     align-items: flex-end;
     justify-content: end;
     gap: 138px;
-    border: 1px solid blue;
     padding: 0;
     &__middle-ring {
       position: absolute;
       width: 542px;
-      top: 25px;
-      left: 25%;
+      top: 150px;
+      left: 30%;
       &::after {
         position: absolute;
       }
     }
     &__img {
       position: absolute;
-      width: 80%;
-      max-width: 410px;
-      height: 493px;
+      width: 70%;
+      max-width: 100%;
+      height: 80%;
+      top: -25px;
       margin: 0;
       z-index: 3;
     }

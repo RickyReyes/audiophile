@@ -6,7 +6,7 @@ const CheckoutMain = () => {
     <section className="checkout__main">
       <h1 className="checkout__main__heading">Checkout</h1>
       <h2 className="checkout__main__subheading">Billing Details</h2>
-      <form className="checkout__main__grid" action="#">
+      <div className="checkout__main__grid" action="#">
         <div>
           <label className="checkout__main__label" htmlFor="name">
             Name
@@ -16,6 +16,7 @@ const CheckoutMain = () => {
             type="text"
             id="name"
             placeholder="Alexei Ward"
+            required
           />
         </div>
 
@@ -29,6 +30,7 @@ const CheckoutMain = () => {
             type="email"
             id="email"
             placeholder="alexei@gmail.com"
+            required
           />
         </fieldset>
 
@@ -41,11 +43,12 @@ const CheckoutMain = () => {
             type="phone"
             id="phone"
             placeholder="+1 202-555-0136"
+            required
           />
         </div>
-      </form>
+      </div>
       <h2 className="checkout__main__subheading">Shipping Info</h2>
-      <form action="#" className="checkout__main__grid">
+      <div className="checkout__main__grid">
         <div className="checkout__main__address">
           <label className="checkout__main__label" htmlFor="address">
             Your Address
@@ -55,6 +58,7 @@ const CheckoutMain = () => {
             type="text"
             id="address"
             placeholder="1137 Williams Avenue"
+            required
           />
         </div>
 
@@ -67,6 +71,7 @@ const CheckoutMain = () => {
             type="text"
             id="zip"
             placeholder="10001"
+            required
           />
         </div>
 
@@ -79,6 +84,7 @@ const CheckoutMain = () => {
             type="text"
             id="city"
             placeholder="New York"
+            required
           />
         </div>
 
@@ -91,11 +97,12 @@ const CheckoutMain = () => {
             type="text"
             id="country"
             placeholder="United States"
+            required
           />
         </div>
-      </form>
+      </div>
       <h2 className="checkout__main__subheading">Payment Details</h2>
-      <form action="#" className="checkout__main__grid">
+      <div className="checkout__main__grid">
         <label className="checkout__main__label">Payment Method</label>
         <div className="checkout__main__radio-container">
           <label className="checkout__main__radio-label" htmlFor="e-money">
@@ -131,7 +138,7 @@ const CheckoutMain = () => {
           />
           <span></span>
         </div>
-      </form>
+      </div>
       {cashOnDelivery ? (
         <section className="cash-on-d-desc">
           <img
@@ -152,6 +159,7 @@ const CheckoutMain = () => {
               className="checkout__main__input"
               type="text"
               placeholder="238521993"
+              required
             />
           </div>
           <div>
