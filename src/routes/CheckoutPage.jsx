@@ -17,12 +17,10 @@ const CheckoutPage = () => {
       <p className="go-back" onClick={() => navigate(-1)}>
         Go Back
       </p>
-      <div className="checkout__grid">
-        <form onSubmit={handleSubmit} action="#">
-          <CheckoutMain />
-          <CheckoutSummary />
-        </form>
-      </div>
+      <form className="checkout__grid" onSubmit={handleSubmit} action="#">
+        <CheckoutMain />
+        <CheckoutSummary />
+      </form>
     </main>
   );
 };

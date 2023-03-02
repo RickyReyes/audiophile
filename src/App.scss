@@ -1561,7 +1561,6 @@ Desktop
       gap: 30px;
     }
     &__main {
-      grid-row-start: 1;
       padding: 3.375rem 3rem;
       &__heading {
         letter-spacing: 1.14286px;
@@ -1570,6 +1569,7 @@ Desktop
     }
     &__summary {
       align-self: flex-start;
+      grid-column-start: 2;
     }
   }
 }

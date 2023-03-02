@@ -1485,7 +1485,6 @@ Desktop
     gap: 30px;
   }
   .checkout__main {
-    grid-row-start: 1;
     padding: 3.375rem 3rem;
   }
   .checkout__main__heading {
@@ -1494,5 +1493,6 @@ Desktop
   }
   .checkout__summary {
     align-self: flex-start;
+    grid-column-start: 2;
   }
 }/*# sourceMappingURL=App.css.map */
